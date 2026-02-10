@@ -1,0 +1,52 @@
+# =================================
+# .gitignore - Agencia TecnoFuturo
+# =================================
+
+# General
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (si usas algún preprocesador)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Archivos temporales
+*.tmp
+*.temp
+.cache/
+
+# Archivos de sistema
+*.bak
+*.backup
+
+# Archivos de audio grandes (comentar si quieres subirlos)
+# assets/audio/*.mp3
+# assets/audio/*.ogg
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Build outputs (si usas algún build tool)
+dist/
+build/
+
+# Coverage reports
+coverage/
+*.lcov

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de Mando de La Agencia TecnoFuturo - Paisaje de Aprendizaje de Tecnología">
+    <title>Agencia TecnoFuturo | Centro de Mando</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Audio tags (música de fondo + sonidos UI) -->
+    <!-- MÚSICA DE FONDO: 
+         Opción 1: Descargar el track con licencia de Epidemic Sound y guardarlo como assets/audio/bg.mp3
+         Opción 2: Descargar el audio de YouTube usando herramientas como y2mate.com o youtube-dl:
+                    https://www.youtube.com/watch?v=qYaKzpMdBaM
+                    Luego guardar como assets/audio/bg.mp3
+         NOTA: YouTube no se puede reproducir directamente por políticas CORS.
+    -->
+    <!-- AUDIO DE FONDO -->
+    <!-- Audio principal para pantalla Welcome -->
+    <audio id="audioPrincipal" loop preload="auto">
+        <source src="assets/audio/principal.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Audio de fondo para Dashboard -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/audio/audio.mp3" type="audio/mpeg">
+        <source src="assets/audio/bg.ogg" type="audio/ogg">
+    </audio>
+    
+    <!-- SONIDOS UI -->
+    <audio id="audioHover" preload="auto">
+        <source src="assets/audio/hover.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audioClick" preload="auto">
+        <source src="assets/audio/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audioOpen" preload="auto">
+        <source src="assets/audio/open.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audioClose" preload="auto">
+        <source src="assets/audio/close.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- SECCIÓN WELCOME -->
+    <section id="welcome" class="section-welcome active" role="main">
+        <div class="animated-background"></div>
+        <div class="welcome-content">
+            <h1 class="welcome-title">Agencia TecnoFuturo</h1>
+            <p class="welcome-subtitle">Centro de Mando Digital | Tecnología 2° Medio</p>
+            <p class="welcome-description">Ingresa al tablero de misiones y comienza tu viaje en el mundo de la tecnología digital</p>
+            <div class="welcome-buttons">
+                <button id="btnEntrar" class="btn btn-primary btn-lg btn-enter" aria-label="Entrar al centro de mando">
+                    <img src="assets/img/iconos/entrar.png" alt="" class="icon-img me-2">Entrar
+                </button>
+                <button id="btnHistoriaWelcome" class="btn btn-outline-light btn-lg" aria-label="Ver historia de la agencia">
+                    <img src="assets/img/iconos/historia.png" alt="" class="icon-img me-2">Historia
+                </button>
+                <button id="btnInstruccionesWelcome" class="btn btn-outline-light btn-lg" aria-label="Ver instrucciones">
+                    <img src="assets/img/iconos/info.png" alt="" class="icon-img me-2">Instrucciones
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DASHBOARD -->
+    <section id="dashboard" class="section-dashboard" role="main" aria-label="Centro de mando">
+        
+        <!-- Navbar responsive -->
+        <nav class="navbar navbar-expand-lg top-bar" role="navigation" aria-label="Navegación principal">
+            <div class="container-fluid">
+                <h2 class="navbar-brand top-bar-title mb-0">Centro de Mando</h2>
+                
+                <!-- Botón Checklist en navbar -->
+                <button id="btnChecklistNavbar" class="checklist-navbar" aria-label="Ver checklist de progreso">
+                    <img src="assets/img/checklist.png" alt="Checklist" draggable="false">
+                    <span class="checklist-pulse"></span>
+                </button>
+                
+                <!-- Botón toggler para mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Menú colapsable -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <button id="btnInicio" class="btn btn-sm btn-outline-light nav-btn" aria-label="Volver al inicio">
+                                <img src="assets/img/iconos/home.png" alt="" class="icon-img-sm me-1">Inicio
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btnHistoria" class="btn btn-sm btn-outline-light nav-btn" aria-label="Ver historia de la agencia">
+                                <img src="assets/img/iconos/historia.png" alt="" class="icon-img-sm me-1">Historia
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btnInstrucciones" class="btn btn-sm btn-outline-light nav-btn" aria-label="Ver instrucciones">
+                                <img src="assets/img/iconos/info.png" alt="" class="icon-img-sm me-1">Instrucciones
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btnMuteToggle" class="btn btn-sm btn-outline-light nav-btn" aria-label="Silenciar música" title="Silenciar música">
+                                <img src="assets/img/iconos/sound-on.png" alt="" class="icon-sound" id="iconSound">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Leyenda de badges -->
+        <div class="legend-badges">
+            <span class="badge bg-obligatoria">Obligatoria</span>
+            <span class="badge bg-optativa">Optativa</span>
+            <span class="badge bg-refuerzo">Refuerzo</span>
+        </div>
+
+        <!-- Contenedor del tablero -->
+        <div id="boardContainer" class="board-container">
+            <!-- Los utensilios se renderizarán aquí dinámicamente -->
+        </div>
+
+        <!-- Bot Asistente -->
+        <button id="helperBot" class="helper-bot" aria-label="Abrir ayuda del bot asistente">
+            <img src="assets/img/bot.png" alt="Bot asistente" draggable="false">
+            <span class="bot-pulse"></span>
+        </button>
+
+        <!-- Panel del Bot -->
+        <div id="botPanel" class="bot-panel" role="dialog" aria-labelledby="botPanelTitle" aria-hidden="true">
+            <div class="bot-panel-header">
+                <h3 id="botPanelTitle"><i class="bi bi-robot me-2"></i>Asistente de la Agencia</h3>
+                <button id="closeBotPanel" class="btn-close" aria-label="Cerrar panel de ayuda"></button>
+            </div>
+            <div class="bot-panel-tabs">
+                <button class="bot-tab active" data-tab="historia" aria-label="Ver historia">
+                    <i class="bi bi-book-fill me-1"></i>Historia
+                </button>
+                <button class="bot-tab" data-tab="ayuda" aria-label="Ver ayuda">
+                    <i class="bi bi-lightbulb-fill me-1"></i>Ayuda
+                </button>
+            </div>
+            <div class="bot-panel-content">
+                <div id="botTabHistoria" class="bot-tab-content active">
+                    <p class="bot-message">
+                        Bienvenido al Centro de Mando de la Agencia TecnoFuturo. Tu misión es convertirte en analista tecnológico completando 6 actividades progresivas.
+                    </p>
+                    <button id="btnOpenHistoriaFromBot" class="btn btn-sm btn-outline-primary w-100">
+                        <i class="bi bi-book me-1"></i>Abrir historia completa
+                    </button>
+                </div>
+                <div id="botTabAyuda" class="bot-tab-content">
+                    <div id="botHelpContent">
+                        <p class="bot-message">
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong>¡Bienvenido!</strong> Haz clic en cualquier utensilio numerado del 1 al 6 para comenzar tu misión.
+                        </p>
+                        <div class="bot-tips">
+                            <p><strong>Tips generales:</strong></p>
+                            <ul>
+                                <li>Sigue el orden numérico recomendado (1→2→3...)</li>
+                                <li>Lee el contexto narrativo de cada actividad</li>
+                                <li>Completa las obligatorias (naranja)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE ACTIVIDAD -->
+    <div class="modal fade" id="modalActividad" tabindex="-1" aria-labelledby="modalActividadLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalActividadLabel">Título de la Actividad</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalActividadContent">
+                        <!-- Contenido dinámico -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a id="btnRecurso" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Ir al recurso
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE HISTORIA -->
+    <div class="modal fade" id="modalHistoria" tabindex="-1" aria-labelledby="modalHistoriaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalHistoriaLabel">
+                        <i class="bi bi-book-fill me-2"></i>Historia – Agencia TecnoFuturo
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="lore-content">
+                        <p class="lead mb-4">
+                            Bienvenido al <strong>Centro de Mando de la Agencia TecnoFuturo</strong>. 
+                            En un mundo donde la tecnología digital y la inteligencia artificial avanzan a ritmo vertiginoso, 
+                            tu misión es convertirte en analista tecnológico: comprender, aplicar, analizar, evaluar y 
+                            crear mensajes responsables.
+                        </p>
+                        <p class="mb-4">
+                            Cada herramienta del centro activa una misión diferente. Completa el itinerario progresivo 
+                            para cerrar el informe final de la Agencia y demostrar que estás preparado para navegar 
+                            el futuro digital con consciencia y criterio.
+                        </p>
+                        
+                        <h4 class="mt-4 mb-3"><i class="bi bi-compass me-2"></i>Reglas del Itinerario</h4>
+                        <ul class="instruction-list">
+                            <li>Hay <strong>6 misiones</strong> numeradas del 1 al 6. Algunas son obligatorias, otras optativas o de refuerzo.</li>
+                            <li>Cada misión desarrolla una <strong>habilidad cognitiva diferente</strong> (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear).</li>
+                            <li>Lee el <strong>contexto narrativo</strong> de cada misión para entender tu rol en la Agencia.</li>
+                            <li>Completa las actividades siguiendo las <strong>instrucciones específicas</strong> de cada herramienta.</li>
+                            <li>La misión final (A6) es la <strong>entrega del informe</strong>: un mensaje digital responsable.</li>
+                        </ul>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Consejo del Director:</strong> No te apresures. Cada misión construye sobre la anterior. 
+                            Reflexiona, investiga y crea con propósito.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnComenzarMision1" class="btn btn-primary">
+                        <i class="bi bi-play-fill me-1"></i>Comenzar Misión 1
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CHECKLIST GLOBAL -->
+    <div class="modal fade" id="modalChecklistGlobal" tabindex="-1" aria-labelledby="modalChecklistGlobalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalChecklistGlobalLabel">
+                        <i class="bi bi-list-check me-2"></i>Checklist de Misiones
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Barra de progreso global -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">Progreso General</span>
+                            <span id="progressText" class="text-muted">0 / 6 completadas</span>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                                 role="progressbar" style="width: 0%" 
+                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lista de misiones -->
+                    <div id="checklistMissionsList" class="checklist-missions-list">
+                        <!-- Se llenará dinámicamente con JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE INSTRUCCIONES -->
+    <div class="modal fade" id="modalInstrucciones" tabindex="-1" aria-labelledby="modalInstruccionesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalInstruccionesLabel">
+                        <i class="bi bi-compass me-2"></i>Instrucciones de Navegación
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Cómo usar el Centro de Mando</h4>
+                    <ol class="instruction-list">
+                        <li>
+                            <strong>Explora los utensilios:</strong> Cada utensilio representa una misión tecnológica. 
+                            Pasa el cursor sobre ellos para ver el título.
+                        </li>
+                        <li>
+                            <strong>Haz clic para más detalles:</strong> Al hacer clic en un utensilio, se abrirá la información 
+                            completa de la misión incluyendo objetivos, materiales y criterios de evaluación.
+                        </li>
+                        <li>
+                            <strong>Tipos de actividades:</strong>
+                            <ul>
+                                <li><span class="badge bg-obligatoria">Obligatoria</span> - Debes completarla</li>
+                                <li><span class="badge bg-optativa">Optativa</span> - Puedes elegir completarla</li>
+                                <li><span class="badge bg-refuerzo">Refuerzo</span> - Para profundizar tus conocimientos</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Accede a los recursos:</strong> Usa el botón "Ir al recurso" para acceder a las plataformas 
+                            y herramientas digitales de cada actividad.
+                        </li>
+                        <li>
+                            <strong>Navegación:</strong> Usa el botón "Inicio" para volver a la pantalla de bienvenida.
+                        </li>
+                    </ol>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-lightbulb-fill me-2"></i>
+                        <strong>Consejo:</strong> Puedes usar la tecla Tab para navegar entre los utensilios con el teclado.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
