@@ -19,12 +19,12 @@
             type: 'optativa',
             typeClass: 'bg-optativa',
             typeLabel: 'Optativa',
-            lore: 'Accedemos al Panel de Datos del Centro de Mando. Aquí se almacenan los conceptos fundamentales de la tecnología digital. Antes de operar cualquier herramienta, debemos dominar el vocabulario técnico para evitar errores críticos.',
+            lore: 'Ingresas al Panel de Datos del Centro de Mando. Aqui se guardan los conceptos base de la tecnologia digital. Sin este vocabulario, las misiones quedan bloqueadas.',
             instructions: [
-                'Completa el crucigrama interactivo de Educaplay',
-                'Identifica al menos 10 conceptos clave sobre tecnología, IA y uso responsable',
-                'Registra mentalmente las definiciones para futuras misiones',
-                'Esta actividad es optativa pero recomendada como base'
+                'Activa el crucigrama interactivo de Educaplay',
+                'Identifica al menos 10 conceptos clave sobre tecnologia, IA y uso responsable',
+                'Registra las definiciones para las misiones siguientes',
+                'Esta actividad es optativa, pero es la base del recorrido'
             ],
             embedHtml: '<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/27737256-crucigrama_tecnologia_ia_y_uso_responsable.html"></iframe>',
             primaryAction: null,
@@ -40,12 +40,12 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'Activamos el Monitor de Observación. Un reporte audiovisual muestra cómo funciona realmente la inteligencia artificial. Tu misión es analizar el material y responder preguntas clave para demostrar comprensión profunda.',
+            lore: 'El Monitor de Observacion se enciende. El informe audiovisual revela como opera la inteligencia artificial. Tu tarea es analizar y responder con claridad.',
             instructions: [
                 'Visualiza el video interactivo completo en Educaplay',
-                'Responde las preguntas de comprensión incrustadas',
+                'Responde las preguntas de comprension incrustadas',
                 'Identifica componentes, procesos y aplicaciones de la IA',
-                'Completa todas las respuestas para validar tu comprensión'
+                'Completa todas las respuestas para validar tu comprension'
             ],
             embedHtml: '<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/27737474-que_es_y_como_funciona_la_inteligencia_artificial.html"></iframe>',
             primaryAction: null,
@@ -61,14 +61,14 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'Encendemos la Consola de IA. Tienes acceso directo a ChatGPT para resolver un caso tecnológico. Recuerda: la IA es una herramienta de apoyo, no sustituye tu pensamiento crítico. Documenta cada paso.',
+            lore: 'La Consola de IA queda activa. Tienes acceso a ChatGPT para resolver un caso. La IA apoya, pero el juicio es tuyo. Documenta cada paso.',
             instructions: [
-                'Haz clic en el botón para acceder a ChatGPT en nueva pestaña',
+                'Haz clic en el boton para acceder a ChatGPT en nueva pestana',
                 'Recibe el caso de estudio de tu docente',
-                'Diseña prompts efectivos para obtener información y análisis',
+                'Disena prompts efectivos para obtener informacion y analisis',
                 'Documenta tu proceso: problema, prompts usados, respuestas de la IA',
-                'Elabora una solución crítica final (no copies directamente la IA)',
-                'Entrega tu informe según indicaciones del docente'
+                'Elabora una solucion critica final (no copies directamente la IA)',
+                'Entrega tu informe segun indicaciones del docente'
             ],
             embedHtml: null,
             primaryAction: {
@@ -90,13 +90,13 @@
             type: 'refuerzo',
             typeClass: 'bg-refuerzo',
             typeLabel: 'Refuerzo',
-            lore: 'Abrimos la Bitácora Personal del analista. Es momento de registrar evidencia: ¿cómo usas la tecnología diariamente? ¿Qué patrones identificas? ¿Qué debes mejorar? La honestidad es clave en este autodiagnóstico.',
+            lore: 'La Bitacora Personal se abre. Es momento de registrar evidencia: como usas la tecnologia, que patrones detectas y que debes mejorar. La honestidad es clave.',
             instructions: [
-                'Accede al Padlet de reflexión personal (embebido abajo)',
-                'Analiza tus hábitos tecnológicos con honestidad',
+                'Accede al Padlet de reflexion personal (embebido abajo)',
+                'Analiza tus habitos tecnologicos con honestidad',
                 'Identifica fortalezas y debilidades en tu uso digital',
-                'Propón un plan de mejora personal con acciones concretas',
-                'Publica tu reflexión en el Padlet'
+                'Propon un plan de mejora personal con acciones concretas',
+                'Publica tu reflexion en el Padlet'
             ],
             embedHtml: '<iframe src="https://padlet.com/embed/o0r6d91nyi3zbmxd" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe>',
             primaryAction: null,
@@ -112,14 +112,14 @@
             type: 'optativa',
             typeClass: 'bg-optativa',
             typeLabel: 'Optativa',
-            lore: 'Conectamos la Mesa de Comunicaciones. Los analistas debaten posturas sobre dilemas tecnológicos actuales. Tu misión: argumentar con evidencias, escuchar con respeto, contraargumentar y coevaluar el trabajo de tus pares.',
+            lore: 'La Mesa de Comunicaciones conecta al equipo. Los analistas debaten dilemas actuales. Tu mision es argumentar con evidencia, escuchar y coevaluar.',
             instructions: [
                 'Lee el tema de debate planteado por tu docente',
-                'Investiga y fundamenta tu postura con evidencias',
-                'Participa en el Padlet con al menos 3 argumentos sólidos',
-                'Responde a 2 compañeros con contraargumentos respetuosos',
-                'Completa la coevaluación en Google Forms',
-                'Mantén siempre la netiqueta y el respeto'
+                'Investiga y fundamenta tu postura con evidencia',
+                'Participa en el Padlet con al menos 3 argumentos solidos',
+                'Responde a 2 companeros con contraargumentos respetuosos',
+                'Completa la coevaluacion en Google Forms',
+                'Manten siempre la netiqueta y el respeto'
             ],
             embedHtml: '<iframe src="https://padlet.com/embed/f4x3inzh663ko611" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe>',
             primaryAction: {
@@ -145,11 +145,11 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'Entramos a la Sala de Difusión. Es momento de emitir tu informe final: un mensaje digital que promueva el uso responsable de la tecnología. Este es el producto culminante de tu recorrido como analista de la Agencia TecnoFuturo.',
+            lore: 'La Sala de Difusion abre el canal final. Aqui entregas tu informe: un mensaje digital que promueva el uso responsable. Es el cierre del recorrido.',
             instructions: [
-                'Crea un video original (60-90 segundos) sobre ciudadanía digital responsable',
+                'Crea un video original (60-90 segundos) sobre ciudadania digital responsable',
                 'Integra aprendizajes de todas las misiones anteriores',
-                'Sube tu video a YouTube como "No listado" o "Público"',
+                'Sube tu video a YouTube como "No listado" o "Publico"',
                 'Copia el enlace de tu video',
                 'Completa el formulario de entrega con el enlace',
                 'NO subas archivos de video directamente: solo el link de YouTube'
@@ -177,9 +177,11 @@
     let instructionsModalInstance = null;
     let historiaModalInstance = null;
     let checklistModalInstance = null;
+    let historiaSummaryModalInstance = null;
     let currentMissionId = null;
     let botPanelOpen = false;
     let navbarCollapse = null;
+    let autoStartAfterHistoria = false;
     
     // Referencias de audio
     let bgMusic = null;
@@ -197,125 +199,191 @@
     const helperMessages = {
         a1: {
             number: 1,
-            title: 'Conceptos clave — Panel de Datos',
+            title: 'Panel de Datos — Claves del lenguaje',
             toolName: 'Panel de Datos',
-            shortLore: 'Has activado el Panel de Datos del Centro de Mando. Antes de operar con IA, necesitas dominar el vocabulario esencial para analizar tecnología con precisión.',
+            shortLore: 'Entras al Panel de Datos. Aqui se guardan las palabras que abren todas las misiones. Sin este vocabulario, el sistema no se deja operar.',
+            theoryTitle: 'Conceptos basicos para iniciar la mision',
+            theoryContent: `
+                <details class="theory-section" open>
+                    <summary>Tecnologia Digital</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Conjunto de herramientas electronicas que permiten crear y comunicar informacion.</p>
+                    <p><strong>Definicion ampliada:</strong> La tecnologia digital se refiere al uso de dispositivos electronicos y sistemas computacionales que procesan informacion en formato digital (codigos binarios), como computadores, celulares e internet.</p>
+                    <p><strong>Ejemplo:</strong> Enviar un mensaje por WhatsApp o usar una plataforma educativa.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Inteligencia Artificial (IA)</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Tecnologia que imita ciertas capacidades humanas mediante datos y algoritmos.</p>
+                    <p><strong>Definicion ampliada:</strong> La inteligencia artificial es una rama de la tecnologia que permite a los sistemas informaticos realizar tareas que normalmente requieren inteligencia humana, como reconocer imagenes, analizar informacion o tomar decisiones.</p>
+                    <p><strong>Ejemplo:</strong> Recomendaciones de Netflix o respuestas de ChatGPT.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Algoritmo</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Secuencia ordenada de pasos para resolver un problema.</p>
+                    <p><strong>Definicion ampliada:</strong> Un algoritmo es un conjunto de instrucciones organizadas que indican como realizar una tarea o resolver una situacion especifica.</p>
+                    <p><strong>Ejemplo:</strong> La receta de cocina o el orden de operaciones en una aplicacion.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Datos</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Informacion que los sistemas utilizan para funcionar o aprender.</p>
+                    <p><strong>Definicion ampliada:</strong> Los datos son elementos de informacion (numeros, textos, imagenes, sonidos) que permiten a los sistemas digitales procesar, analizar y generar resultados.</p>
+                    <p><strong>Ejemplo:</strong> Las busquedas que realizas en Google.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Automatizacion</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Uso de tecnologia para realizar tareas automaticamente.</p>
+                    <p><strong>Definicion ampliada:</strong> La automatizacion consiste en delegar a sistemas tecnologicos la ejecucion de tareas repetitivas o complejas sin intervencion constante de una persona.</p>
+                    <p><strong>Ejemplo:</strong> Un semaforo inteligente o un chatbot de atencion al cliente.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Privacidad Digital</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Proteccion de la informacion personal en internet.</p>
+                    <p><strong>Definicion ampliada:</strong> La privacidad digital implica resguardar los datos personales y controlar que informacion compartimos en entornos digitales.</p>
+                    <p><strong>Ejemplo:</strong> Configurar quien puede ver tus publicaciones en redes sociales.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Etica Digital</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Normas y valores que orientan el uso responsable de la tecnologia.</p>
+                    <p><strong>Definicion ampliada:</strong> La etica digital se refiere a los principios que regulan el comportamiento en entornos tecnologicos, promoviendo respeto, responsabilidad y uso consciente.</p>
+                    <p><strong>Ejemplo:</strong> No usar IA para copiar tareas sin reflexion.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Usuario</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Persona que utiliza una tecnologia o sistema digital.</p>
+                    <p><strong>Definicion ampliada:</strong> El usuario es quien interactua con dispositivos, aplicaciones o plataformas digitales.</p>
+                    <p><strong>Ejemplo:</strong> Un estudiante que utiliza una plataforma educativa.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Internet</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Red mundial que conecta dispositivos para compartir informacion.</p>
+                    <p><strong>Definicion ampliada:</strong> Internet es una red global de comunicacion que permite el intercambio de informacion entre dispositivos conectados.</p>
+                    <p><strong>Ejemplo:</strong> Buscar informacion en linea.</p>
+                </details>
+                <details class="theory-section">
+                    <summary>Aprendizaje Automatico (Machine Learning)</summary>
+                    <p class="mt-2"><strong>Definicion corta:</strong> Sistema que mejora su funcionamiento a partir de datos.</p>
+                    <p><strong>Definicion ampliada:</strong> Es una tecnica dentro de la inteligencia artificial que permite a los sistemas aprender patrones a partir de grandes cantidades de datos sin ser programados paso a paso.</p>
+                    <p><strong>Ejemplo:</strong> El reconocimiento facial en el celular.</p>
+                </details>
+            `,
             steps: [
-                'Abre el crucigrama/glosario y revisa las definiciones.',
-                'Completa la actividad sin adivinar: vuelve a leer las pistas si te equivocas.',
-                'Al finalizar, registra 3 conceptos que te parecieron más importantes.'
+                'Abre la guia de conceptos: es la llave para el crucigrama.',
+                'Recorre el glosario y reconoce las definiciones clave.',
+                'Resuelve el crucigrama sin adivinar; relee pistas si fallas.',
+                'Guarda 3 conceptos que sostendran las misiones siguientes.'
             ],
-            tip: 'Logras la misión si identificas correctamente los conceptos y puedes explicarlos con tus propias palabras.',
+            tip: 'Mision lograda si puedes explicar los conceptos con tus propias palabras.',
             checklist: [
-                'Completé el recurso interactivo.',
-                'Anoté 3 conceptos clave.',
-                'Puedo explicar al menos 2 conceptos sin leer.'
+                'Revisé el vocabulario con Atect Bot.',
+                'Resolvi el crucigrama sin adivinar.',
+                'Anote 3 conceptos clave.',
+                'Puedo explicar 2 conceptos sin leer.'
             ],
             links: [
-                { label: 'Abrir crucigrama (Educaplay)', url: '#' },
+                { label: 'Abrir conceptos clave 🤖', url: '#theory-a1', isTheory: true },
+                { label: 'Entrar al crucigrama (Educaplay)', url: '#' },
                 { label: 'Volver al Centro de Mando', url: '#dashboard' }
             ]
         },
         a2: {
             number: 2,
-            title: 'Video interactivo — Pantalla de Análisis',
-            toolName: 'Pantalla de Análisis',
-            shortLore: 'En la Pantalla de Análisis se revisan evidencias audiovisuales. Observa el informe y responde verificaciones para confirmar comprensión.',
+            title: 'Pantalla de Analisis — Informe en vivo',
+            toolName: 'Pantalla de Analisis',
+            shortLore: 'La Pantalla de Analisis se enciende. El informe llega en video y tu tarea es interpretar cada pista para avanzar.',
             steps: [
-                'Reproduce el video interactivo y responde las preguntas en los tiempos indicados.',
-                'Si fallas una pregunta, revisa el fragmento y vuelve a intentarlo (si está permitido).',
-                'Anota una idea clave del video y un ejemplo de IA en tu vida cotidiana.'
+                'Reproduce el informe y responde las preguntas cuando aparezcan.',
+                'Si fallas, vuelve al fragmento y observa de nuevo.',
+                'Anota una idea clave y un ejemplo real de IA en tu entorno.'
             ],
-            tip: 'Logras la misión si respondes justificando y conectando el contenido con ejemplos reales.',
+            tip: 'Mision lograda si conectas el informe con ejemplos reales y justificas tus respuestas.',
             checklist: [
-                'Respondí todas las preguntas del video.',
-                'Anoté 1 idea clave.',
-                'Identifiqué 1 ejemplo cotidiano de IA.'
+                'Respondi todas las preguntas del video.',
+                'Anote 1 idea clave.',
+                'Identifique 1 ejemplo cotidiano de IA.'
             ],
             links: [
-                { label: 'Abrir video interactivo (Educaplay)', url: '#' },
+                { label: 'Entrar al informe interactivo (Educaplay)', url: '#' },
                 { label: 'Volver al Centro de Mando', url: '#dashboard' }
             ]
         },
         a3: {
             number: 3,
-            title: 'Caso con IA — Consola de Inteligencia Artificial',
+            title: 'Consola de IA — Caso en desarrollo',
             toolName: 'Consola de IA',
-            shortLore: 'La Consola de IA permite simular escenarios. Usa IA como apoyo, no como sustituto: analiza el caso, compara riesgos y beneficios, y emite juicio crítico.',
+            shortLore: 'La Consola de IA abre un caso. La inteligencia artificial es tu apoyo, pero el juicio final es tuyo.',
             steps: [
-                'Entra a ChatGPT y pega el prompt de análisis del caso.',
-                'Lee la respuesta y subraya: 2 beneficios, 2 riesgos y 1 criterio ético.',
-                'Escribe tu conclusión personal: ¿qué aceptarías y qué limitarías?'
+                'Entra a ChatGPT y analiza el caso con el prompt indicado.',
+                'Extrae 2 beneficios, 2 riesgos y 1 criterio etico.',
+                'Redacta tu conclusion personal: que aceptas y que limitas.'
             ],
-            tip: 'Logras la misión si tu conclusión es tuya, basada en argumentos, no una copia de la IA.',
+            tip: 'Mision lograda si tu conclusion es tuya y esta basada en argumentos.',
             checklist: [
-                'Usé ChatGPT con el prompt indicado.',
-                'Identifiqué beneficios, riesgos y criterios éticos.',
-                'Redacté mi conclusión personal.'
+                'Use ChatGPT con el prompt indicado.',
+                'Identifique beneficios, riesgos y criterios eticos.',
+                'Redacte mi conclusion personal.'
             ],
             links: [
-                { label: 'Abrir ChatGPT', url: 'https://chatgpt.com/' },
+                { label: 'Abrir ChatGPT (Consola)', url: 'https://chatgpt.com/' },
                 { label: 'Volver al Centro de Mando', url: '#dashboard' }
             ]
         },
         a4: {
             number: 4,
-            title: 'Bitácora personal — Registro del Analista',
+            title: 'Bitacora personal — Registro del analista',
             toolName: 'Bitácora Digital',
-            shortLore: 'En la Bitácora Personal registras tu diagnóstico como analista. Reflexiona sobre tu uso de tecnología y deja evidencia de aprendizaje consciente.',
+            shortLore: 'La Bitacora abre un espacio de honestidad. Aqui registras tu diagnostico y dejas evidencia de aprendizaje consciente.',
             steps: [
-                'Abre la bitácora y responde las 4 preguntas de reflexión.',
-                'Incluye al menos un ejemplo real de tu experiencia digital.',
-                'Cierra con un cambio concreto que harás para un uso más responsable.'
+                'Abre la bitacora y responde las 4 preguntas de reflexion.',
+                'Incluye un ejemplo real de tu experiencia digital.',
+                'Cierra con un cambio concreto para un uso mas responsable.'
             ],
-            tip: 'Logras la misión si tu reflexión es específica, honesta y propone un cambio real.',
+            tip: 'Mision lograda si tu reflexion es especifica, honesta y propone un cambio real.',
             checklist: [
-                'Respondí las 4 preguntas.',
-                'Incluí 1 ejemplo personal.',
+                'Respondi las 4 preguntas.',
+                'Inclui 1 ejemplo personal.',
                 'Propuse 1 cambio concreto.'
             ],
             links: [
-                { label: 'Abrir Bitácora (Padlet)', url: '#' },
+                { label: 'Abrir Bitacora (Padlet)', url: '#' },
                 { label: 'Volver al Centro de Mando', url: '#dashboard' }
             ]
         },
         a5: {
             number: 5,
-            title: 'Debate y coevaluación — Mesa de Comunicaciones',
+            title: 'Mesa de Comunicaciones — Debate y coevaluacion',
             toolName: 'Mesa de Comunicaciones',
-            shortLore: 'La Mesa de Comunicaciones reúne posturas del equipo. Argumenta tu posición, responde con respeto y coevalúa usando criterios claros.',
+            shortLore: 'La Mesa de Comunicaciones conecta al equipo. Argumenta con evidencia, escucha y responde con respeto.',
             steps: [
-                'Publica tu postura (6–8 líneas) respondiendo la pregunta de debate.',
-                'Responde a 2 compañeros con argumentos y respeto.',
-                'Completa la coevaluación en el formulario usando los criterios.'
+                'Publica tu postura y responde la pregunta de debate.',
+                'Responde a 2 companeros con argumentos y respeto.',
+                'Completa la coevaluacion con criterios claros.'
             ],
-            tip: 'Logras la misión si argumentas, consideras otras posturas y mantienes convivencia digital.',
+            tip: 'Mision lograda si argumentas, consideras otras posturas y cuidas la convivencia digital.',
             checklist: [
-                'Publiqué mi postura con argumentos.',
-                'Respondí a 2 compañeros respetuosamente.',
-                'Completé la coevaluación.'
+                'Publique mi postura con argumentos.',
+                'Respondi a 2 companeros con respeto.',
+                'Complete la coevaluacion.'
             ],
             links: [
                 { label: 'Entrar al Debate (Padlet)', url: '#' },
-                { label: 'Coevaluación (Google Forms)', url: '#' },
+                { label: 'Coevaluacion (Google Forms)', url: '#' },
                 { label: 'Volver al Centro de Mando', url: '#dashboard' }
             ]
         },
         a6: {
             number: 6,
-            title: 'Mensaje final — Sala de Difusión',
+            title: 'Sala de Difusion — Mensaje final',
             toolName: 'Sala de Difusión',
-            shortLore: 'La Sala de Difusión transmite mensajes a la comunidad. Crea un video breve para promover uso responsable de tecnología e IA y entrégalo por el canal oficial.',
+            shortLore: 'La Sala de Difusion transmite a la comunidad. Aqui entregas tu mensaje final sobre uso responsable.',
             steps: [
-                'Crea un video de 60–90 segundos con un mensaje claro y responsable.',
-                'Súbelo a YouTube como "No listado" o "Público" y copia el enlace.',
+                'Crea un video de 60 a 90 segundos con un mensaje claro y responsable.',
+                'Subelo a YouTube como "No listado" o "Publico" y copia el enlace.',
                 'Entrega el enlace en el formulario oficial.'
             ],
-            tip: 'Logras la misión si tu mensaje es claro, respetuoso y basado en lo aprendido (beneficios, riesgos y ética).',
+            tip: 'Mision lograda si tu mensaje es claro, respetuoso y basado en lo aprendido.',
             checklist: [
-                'Creé el video (60–90 s).',
-                'Lo subí a YouTube y copié el enlace.',
-                'Entregué el enlace en el formulario.'
+                'Cree el video (60 a 90 s).',
+                'Lo subi a YouTube y copie el enlace.',
+                'Entregue el enlace en el formulario.'
             ],
             links: [
                 { label: 'Formulario de entrega (Google Forms)', url: 'https://docs.google.com/forms/d/e/1FAIpQLSfTHoxk2LcvA2j7m_7GEw5fUnsWp3AbEWJihF2eSfFEPwoAzQ/viewform?usp=publish-editor' },
@@ -373,6 +441,11 @@
             setTimeout(() => {
                 $dashboard.removeClass('fade-in');
             }, 400);
+            
+            // Mostrar toast de bienvenida de Atect Bot (solo primera vez)
+            setTimeout(() => {
+                showWelcomeToast();
+            }, 800);
         }, 400);
     }
 
@@ -534,6 +607,9 @@
         // Actualizar panel del bot con información contextual
         updateBotPanel(missionId);
         
+        // Cambiar automáticamente a la pestaña "Ayuda" del bot para mostrar info específica
+        switchBotTab('ayuda');
+        
         const $modal = $('#modalActividad');
         const $modalTitle = $('#modalActividadLabel');
         const $modalContent = $('#modalActividadContent');
@@ -600,6 +676,18 @@
             </div>
         `;
         
+        // Conceptos clave antes del crucigrama (A1)
+        if (mission.id === 'a1') {
+            const theoryContent = helperMessages.a1?.theoryContent || '';
+            html += `
+                <div class="action-box theory-box">
+                    <h4><i class="bi bi-book me-2"></i>Conceptos clave antes del crucigrama</h4>
+                    <p class="mb-3">Revisa los conceptos basicos para resolver el crucigrama con mayor seguridad.</p>
+                    <div class="theory-inline">${theoryContent}</div>
+                </div>
+            `;
+        }
+
         // Embed (si existe)
         if (mission.embedHtml) {
             html += `
@@ -871,17 +959,27 @@
             `;
             
             helper.links.forEach(link => {
-                const isExternal = link.url.startsWith('http');
-                const target = isExternal ? '_blank' : '_self';
-                const rel = isExternal ? 'noopener noreferrer' : '';
-                const icon = isExternal ? 'bi-box-arrow-up-right' : 'bi-arrow-return-left';
-                
-                html += `
-                    <a href="${link.url}" target="${target}" ${rel ? `rel="${rel}"` : ''} 
-                       class="btn btn-sm btn-outline-primary bot-link-btn">
-                        <i class="bi ${icon} me-1"></i>${link.label}
-                    </a>
-                `;
+                // Si es un link de teoría, manejarlo especialmente
+                if (link.isTheory) {
+                    html += `
+                        <button class="btn btn-sm btn-primary bot-link-btn btn-theory w-100 mb-2" 
+                                data-mission-id="${missionId}">
+                            <i class="bi bi-book-fill me-1"></i>${link.label}
+                        </button>
+                    `;
+                } else {
+                    const isExternal = link.url.startsWith('http');
+                    const target = isExternal ? '_blank' : '_self';
+                    const rel = isExternal ? 'noopener noreferrer' : '';
+                    const icon = isExternal ? 'bi-box-arrow-up-right' : 'bi-arrow-return-left';
+                    
+                    html += `
+                        <a href="${link.url}" target="${target}" ${rel ? `rel="${rel}"` : ''} 
+                           class="btn btn-sm btn-outline-primary bot-link-btn">
+                            <i class="bi ${icon} me-1"></i>${link.label}
+                        </a>
+                    `;
+                }
             });
             
             html += `</div>`;
@@ -1012,8 +1110,12 @@
         }
         
         try {
-            // Clonar para permitir múltiples reproducciones simultáneas
-            const sound = audioElement.cloneNode();
+            // Clonar para permitir múltiples reproducciones simultaneas
+            const sound = audioElement.cloneNode(true);
+            if (!sound.src && audioElement.currentSrc) {
+                sound.src = audioElement.currentSrc;
+            }
+            sound.load();
             sound.volume = 0.7; // Volumen alto para efectos
             
             const playPromise = sound.play();
@@ -1284,6 +1386,96 @@
     }
 
     // =================================
+    // SISTEMA DE ONBOARDING Y TEORÍA
+    // =================================
+    
+    /**
+     * Muestra el toast de bienvenida de Atect Bot (solo primera vez)
+     */
+    function showWelcomeToast() {
+        // Verificar si ya se mostró anteriormente
+        const hasSeenWelcome = localStorage.getItem('atect_welcome_seen');
+        
+        if (hasSeenWelcome === 'true') {
+            return; // Ya vio el mensaje, no mostrar de nuevo
+        }
+        
+        // Mostrar el toast
+        const toastElement = document.getElementById('atectWelcomeToast');
+        if (toastElement) {
+            const toast = new bootstrap.Toast(toastElement, {
+                autohide: true,
+                delay: 7000
+            });
+            
+            toast.show();
+            
+            // Guardar en localStorage que ya se mostró
+            localStorage.setItem('atect_welcome_seen', 'true');
+            
+            console.log('🤖 Toast de bienvenida de Atect Bot mostrado');
+        }
+    }
+    
+    /**
+     * Abre el modal de teoría para la misión A1
+     */
+    function openTheoryModal() {
+        const theoryModal = document.getElementById('modalTheoryA1');
+        if (theoryModal) {
+            const modal = new bootstrap.Modal(theoryModal, {
+                keyboard: true,
+                backdrop: true
+            });
+            
+            modal.show();
+            playSound(audioOpen);
+            
+            // Marcar que el estudiante abrió la teoría (opcional para seguimiento)
+            localStorage.setItem('atect_theory_A1_seen', 'true');
+            
+            console.log('📚 Panel de teoría A1 abierto');
+        }
+    }
+
+    /**
+     * Abre el modal de historia completa con control del boton de inicio
+     */
+    function openHistoriaModal(options = {}) {
+        const { showStartButton = true, markSeen = true } = options;
+        const $startButton = $('#btnComenzarMision1');
+
+        if ($startButton.length) {
+            $startButton.toggleClass('d-none', !showStartButton);
+            $startButton.prop('hidden', !showStartButton);
+        }
+
+        if (historiaModalInstance) {
+            historiaModalInstance.show();
+            if (markSeen) {
+                localStorage.setItem('historia_seen', 'true');
+            }
+        }
+    }
+
+    /**
+     * Abre el resumen de historia al entrar sin haberla visto
+     */
+    function openHistoriaSummaryModal() {
+        const hasSeenHistoria = localStorage.getItem('historia_seen') === 'true';
+        const hasSeenSummaryThisSession = sessionStorage.getItem('historia_summary_seen') === 'true';
+
+        if (hasSeenHistoria || hasSeenSummaryThisSession) {
+            return;
+        }
+
+        if (historiaSummaryModalInstance) {
+            historiaSummaryModalInstance.show();
+            sessionStorage.setItem('historia_summary_seen', 'true');
+        }
+    }
+
+    // =================================
     // INICIALIZACIÓN
     // =================================
     
@@ -1309,6 +1501,7 @@
         const $modalInstrucciones = $('#modalInstrucciones');
         const $modalHistoria = $('#modalHistoria');
         const $modalChecklistGlobal = $('#modalChecklistGlobal');
+        const $modalHistoriaResumen = $('#modalHistoriaResumen');
         
         if ($modalActividad.length) {
             modalInstance = new bootstrap.Modal($modalActividad[0], {
@@ -1337,6 +1530,13 @@
                 focus: true
             });
         }
+
+        if ($modalHistoriaResumen.length) {
+            historiaSummaryModalInstance = new bootstrap.Modal($modalHistoriaResumen[0], {
+                keyboard: true,
+                focus: true
+            });
+        }
         
         // Inicializar navbar collapse
         const navbarElement = document.getElementById('navbarMain');
@@ -1351,14 +1551,15 @@
             playSound(audioClick);
             startBackgroundMusic(); // Iniciar música al entrar (user interaction)
             showDashboard();
+            setTimeout(() => {
+                openHistoriaSummaryModal();
+            }, 300);
         });
         
         // Botones del Welcome
         $('#btnHistoriaWelcome').on('click', () => {
-            if (historiaModalInstance) {
-                playSound(audioClick);
-                historiaModalInstance.show();
-            }
+            playSound(audioClick);
+            openHistoriaModal({ showStartButton: false, markSeen: true });
         });
         
         $('#btnInstruccionesWelcome').on('click', () => {
@@ -1383,9 +1584,7 @@
         
         $('#btnHistoria').on('click', () => {
             closeNavbar();
-            if (historiaModalInstance) {
-                historiaModalInstance.show();
-            }
+            openHistoriaModal({ showStartButton: true, markSeen: true });
         });
         
         $('#btnChecklistNavbar').on('click', () => {
@@ -1403,6 +1602,7 @@
             // Pequeño delay para que se cierre el modal antes de abrir el siguiente
             setTimeout(() => {
                 openMissionModal('a1');
+                autoStartAfterHistoria = false;
             }, 300);
         });
         
@@ -1418,9 +1618,18 @@
         
         // Botón "Abrir historia completa" desde el bot
         $('#btnOpenHistoriaFromBot').on('click', () => {
-            if (historiaModalInstance) {
-                historiaModalInstance.show();
+            openHistoriaModal({ showStartButton: true, markSeen: true });
+        });
+
+        // Boton "Saber mas" del resumen de historia
+        $('#btnSaberMasHistoria').on('click', () => {
+            if (historiaSummaryModalInstance) {
+                historiaSummaryModalInstance.hide();
             }
+            setTimeout(() => {
+                autoStartAfterHistoria = true;
+                openHistoriaModal({ showStartButton: true, markSeen: true });
+            }, 200);
         });
         
         // Event listeners del bot con delegación de eventos (para contenido dinámico)
@@ -1438,6 +1647,25 @@
         $(document).on('click', '#btnMarkCompleted', function() {
             const mId = $(this).data('mission-id');
             markMissionCompleted(mId);
+        });
+        
+        // Botón "Leer conceptos básicos" (teoría A1)
+        $(document).on('click', '.btn-theory', function() {
+            openTheoryModal();
+        });
+        
+        // Botón "Ir al crucigrama" desde el modal de teoría
+        $('#btnGoToCrossword').on('click', function() {
+            // Cerrar el modal de teoría
+            const theoryModal = bootstrap.Modal.getInstance(document.getElementById('modalTheoryA1'));
+            if (theoryModal) {
+                theoryModal.hide();
+            }
+            
+            // Abrir el modal de la actividad A1
+            setTimeout(() => {
+                openMissionModal('a1');
+            }, 300);
         });
         
         // Cerrar panel del bot al hacer clic fuera
@@ -1483,6 +1711,12 @@
         // Focus management para modales
         $('#modalInstrucciones, #modalHistoria, #modalChecklist').on('hidden.bs.modal', function() {
             playSound(audioClose);
+            if (this.id === 'modalHistoria' && autoStartAfterHistoria) {
+                autoStartAfterHistoria = false;
+                setTimeout(() => {
+                    openMissionModal('a1');
+                }, 200);
+            }
             // Retornar focus al último elemento activo
             const $activeElement = $(document.activeElement);
             if ($activeElement.hasClass('utensilio')) {

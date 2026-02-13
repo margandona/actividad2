@@ -6,6 +6,11 @@
     <meta name="description" content="Centro de Mando de La Agencia TecnoFuturo - Paisaje de Aprendizaje de Tecnología">
     <title>Agencia TecnoFuturo | Centro de Mando</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo-tecnofuturo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo-tecnofuturo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo-tecnofuturo.png">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
@@ -155,7 +160,7 @@
             <div class="bot-panel-content">
                 <div id="botTabHistoria" class="bot-tab-content active">
                     <p class="bot-message">
-                        Bienvenido al Centro de Mando de la Agencia TecnoFuturo. Tu misión es convertirte en analista tecnológico completando 6 actividades progresivas.
+                        Has llegado al Centro de Mando de la Agencia TecnoFuturo. Aqui comienza tu entrenamiento como analista: seis misiones, un recorrido y un informe final.
                     </p>
                     <button id="btnOpenHistoriaFromBot" class="btn btn-sm btn-outline-primary w-100">
                         <i class="bi bi-book me-1"></i>Abrir historia completa
@@ -165,14 +170,14 @@
                     <div id="botHelpContent">
                         <p class="bot-message">
                             <i class="bi bi-info-circle me-2"></i>
-                            <strong>¡Bienvenido!</strong> Haz clic en cualquier utensilio numerado del 1 al 6 para comenzar tu misión.
+                            <strong>La ruta esta activa.</strong> Elige una herramienta del 1 al 6 y abre tu siguiente mision.
                         </p>
                         <div class="bot-tips">
-                            <p><strong>Tips generales:</strong></p>
+                            <p><strong>Bitacora rapida:</strong></p>
                             <ul>
-                                <li>Sigue el orden numérico recomendado (1→2→3...)</li>
-                                <li>Lee el contexto narrativo de cada actividad</li>
-                                <li>Completa las obligatorias (naranja)</li>
+                                <li>Sigue el orden recomendado (1→2→3...)</li>
+                                <li>Lee el contexto narrativo antes de actuar</li>
+                                <li>Completa las misiones obligatorias (naranja)</li>
                             </ul>
                         </div>
                     </div>
@@ -217,30 +222,28 @@
                 <div class="modal-body">
                     <div class="lore-content">
                         <p class="lead mb-4">
-                            Bienvenido al <strong>Centro de Mando de la Agencia TecnoFuturo</strong>. 
-                            En un mundo donde la tecnología digital y la inteligencia artificial avanzan a ritmo vertiginoso, 
-                            tu misión es convertirte en analista tecnológico: comprender, aplicar, analizar, evaluar y 
-                            crear mensajes responsables.
+                            Bienvenido al <strong>Centro de Mando de la Agencia TecnoFuturo</strong>.
+                            En este mundo la tecnologia avanza sin pausa, y tu rol es claro: convertirte en analista,
+                            comprender lo digital y crear mensajes responsables que orienten a otros.
                         </p>
                         <p class="mb-4">
-                            Cada herramienta del centro activa una misión diferente. Completa el itinerario progresivo 
-                            para cerrar el informe final de la Agencia y demostrar que estás preparado para navegar 
-                            el futuro digital con consciencia y criterio.
+                            Cada herramienta del centro activa una mision. Avanza en orden y junta las piezas del
+                            informe final para demostrar que puedes navegar el futuro digital con criterio.
                         </p>
                         
                         <h4 class="mt-4 mb-3"><i class="bi bi-compass me-2"></i>Reglas del Itinerario</h4>
                         <ul class="instruction-list">
-                            <li>Hay <strong>6 misiones</strong> numeradas del 1 al 6. Algunas son obligatorias, otras optativas o de refuerzo.</li>
-                            <li>Cada misión desarrolla una <strong>habilidad cognitiva diferente</strong> (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear).</li>
-                            <li>Lee el <strong>contexto narrativo</strong> de cada misión para entender tu rol en la Agencia.</li>
-                            <li>Completa las actividades siguiendo las <strong>instrucciones específicas</strong> de cada herramienta.</li>
-                            <li>La misión final (A6) es la <strong>entrega del informe</strong>: un mensaje digital responsable.</li>
+                            <li>Hay <strong>6 misiones</strong> del 1 al 6. Algunas son obligatorias, otras optativas o de refuerzo.</li>
+                            <li>Cada mision entrena una <strong>habilidad cognitiva</strong> (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear).</li>
+                            <li>Lee el <strong>contexto narrativo</strong> para entender tu rol en la Agencia.</li>
+                            <li>Completa las actividades siguiendo las <strong>instrucciones</strong> de cada herramienta.</li>
+                            <li>La mision final (A6) es la <strong>entrega del informe</strong>: un mensaje digital responsable.</li>
                         </ul>
 
                         <div class="alert alert-info mt-4">
                             <i class="bi bi-lightbulb-fill me-2"></i>
-                            <strong>Consejo del Director:</strong> No te apresures. Cada misión construye sobre la anterior. 
-                            Reflexiona, investiga y crea con propósito.
+                            <strong>Consejo del Director:</strong> No te apresures. Cada mision construye la siguiente.
+                            Observa, piensa y crea con proposito.
                         </div>
                     </div>
                 </div>
@@ -248,6 +251,45 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="button" id="btnComenzarMision1" class="btn btn-primary">
                         <i class="bi bi-play-fill me-1"></i>Comenzar Misión 1
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE HISTORIA RESUMEN -->
+    <div class="modal fade" id="modalHistoriaResumen" tabindex="-1" aria-labelledby="modalHistoriaResumenLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalHistoriaResumenLabel">
+                        <i class="bi bi-book-half me-2"></i>Resumen de la historia
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead">
+                        La Agencia TecnoFuturo abre sus puertas. Hoy entras como aspirante, y saldras como analista capaz
+                        de entender la tecnologia, cuestionarla y crear mensajes responsables.
+                    </p>
+                    <p>
+                        Cada herramienta del centro es una sala de entrenamiento. Si avanzas en orden, cada mision te entrega
+                        una pieza del rompecabezas hasta llegar al informe final.
+                    </p>
+                    <ul class="instruction-list">
+                        <li>Lee el contexto narrativo antes de activar cada sala.</li>
+                        <li>Domina los conceptos clave para desbloquear el crucigrama.</li>
+                        <li>Guarda evidencias: seran tu respaldo en la mision final.</li>
+                    </ul>
+                    <div class="alert alert-info">
+                        <i class="bi bi-lightbulb-fill me-2"></i>
+                        Si quieres el relato completo, abre la historia antes de comenzar.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnSaberMasHistoria" class="btn btn-primary">
+                        <i class="bi bi-book me-1"></i>Saber mas
                     </button>
                 </div>
             </div>
@@ -301,18 +343,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <h4>Cómo usar el Centro de Mando</h4>
+                    <h4>Mapa de navegacion del Centro de Mando</h4>
                     <ol class="instruction-list">
                         <li>
-                            <strong>Explora los utensilios:</strong> Cada utensilio representa una misión tecnológica. 
-                            Pasa el cursor sobre ellos para ver el título.
+                            <strong>Explora las herramientas:</strong> Cada utensilio es una sala de entrenamiento.
+                            Pasa el cursor para leer el nombre de la mision.
                         </li>
                         <li>
-                            <strong>Haz clic para más detalles:</strong> Al hacer clic en un utensilio, se abrirá la información 
-                            completa de la misión incluyendo objetivos, materiales y criterios de evaluación.
+                            <strong>Activa la sala:</strong> Al hacer clic, se abre el contexto, las instrucciones y el acceso
+                            a la actividad de la mision.
                         </li>
                         <li>
-                            <strong>Tipos de actividades:</strong>
+                            <strong>Tipos de misiones:</strong>
                             <ul>
                                 <li><span class="badge bg-obligatoria">Obligatoria</span> - Debes completarla</li>
                                 <li><span class="badge bg-optativa">Optativa</span> - Puedes elegir completarla</li>
@@ -320,20 +362,142 @@
                             </ul>
                         </li>
                         <li>
-                            <strong>Accede a los recursos:</strong> Usa el botón "Ir al recurso" para acceder a las plataformas 
-                            y herramientas digitales de cada actividad.
+                            <strong>Accede al recurso:</strong> Usa el boton "Ir al recurso" para entrar a la plataforma de la mision.
                         </li>
                         <li>
-                            <strong>Navegación:</strong> Usa el botón "Inicio" para volver a la pantalla de bienvenida.
+                            <strong>Usa el bot interactivo:</strong> Haz clic en el bot para abrir el panel de ayuda. Alli tienes
+                            historia, pasos guiados y checklist por mision.
+                        </li>
+                        <li>
+                            <strong>Regresa al inicio:</strong> Usa el boton "Inicio" para volver a la sala principal.
                         </li>
                     </ol>
                     <div class="alert alert-info mt-3">
                         <i class="bi bi-lightbulb-fill me-2"></i>
-                        <strong>Consejo:</strong> Puedes usar la tecla Tab para navegar entre los utensilios con el teclado.
+                        <strong>Consejo:</strong> Puedes usar la tecla Tab para navegar entre las salas con el teclado.
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST DE BIENVENIDA ATECT BOT -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11000;">
+        <div id="atectWelcomeToast" class="toast atect-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="7000">
+            <div class="toast-header atect-toast-header">
+                <div class="bot-avatar me-2">🤖</div>
+                <strong class="me-auto">Atect Bot</strong>
+                <small>Centro de Mando</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body atect-toast-body">
+                Soy Atect Bot 🤖.<br>
+                Estoy aqui para abrir la ruta antes de cada mision y explicar los conceptos clave.<br>
+                Si tienes dudas, buscame y te guiare paso a paso.
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PANEL TEÓRICO A1 -->
+    <div class="modal fade" id="modalTheoryA1" tabindex="-1" aria-labelledby="modalTheoryA1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content theory-modal">
+                <div class="modal-header theory-modal-header">
+                    <div class="d-flex align-items-center">
+                        <div class="bot-avatar-large me-3">🤖</div>
+                        <div>
+                            <h3 class="modal-title mb-0" id="modalTheoryA1Label">
+                                Conceptos básicos para iniciar la misión
+                            </h3>
+                            <small class="text-muted">Atect Bot te explica</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body theory-modal-body">
+                    <div class="theory-content">
+                        <p class="lead mb-4">
+                            Antes de activar el Panel de Datos, domina este vocabulario. Son las claves que abren el crucigrama.
+                        </p>
+                        <div class="theory-inline">
+                            <details class="theory-section" open>
+                                <summary><i class="bi bi-lightbulb-fill text-warning me-2"></i>Tecnologia Digital</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Conjunto de herramientas electronicas que permiten crear y comunicar informacion.</p>
+                                <p><strong>Definicion ampliada:</strong> La tecnologia digital se refiere al uso de dispositivos electronicos y sistemas computacionales que procesan informacion en formato digital (codigos binarios), como computadores, celulares e internet.</p>
+                                <p><strong>Ejemplo:</strong> Enviar un mensaje por WhatsApp o usar una plataforma educativa.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-robot text-primary me-2"></i>Inteligencia Artificial (IA)</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Tecnologia que imita ciertas capacidades humanas mediante datos y algoritmos.</p>
+                                <p><strong>Definicion ampliada:</strong> La inteligencia artificial es una rama de la tecnologia que permite a los sistemas informaticos realizar tareas que normalmente requieren inteligencia humana, como reconocer imagenes, analizar informacion o tomar decisiones.</p>
+                                <p><strong>Ejemplo:</strong> Recomendaciones de Netflix o respuestas de ChatGPT.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-diagram-3-fill text-success me-2"></i>Algoritmo</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Secuencia ordenada de pasos para resolver un problema.</p>
+                                <p><strong>Definicion ampliada:</strong> Un algoritmo es un conjunto de instrucciones organizadas que indican como realizar una tarea o resolver una situacion especifica.</p>
+                                <p><strong>Ejemplo:</strong> La receta de cocina o el orden de operaciones en una aplicacion.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-database-fill text-info me-2"></i>Datos</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Informacion que los sistemas utilizan para funcionar o aprender.</p>
+                                <p><strong>Definicion ampliada:</strong> Los datos son elementos de informacion (numeros, textos, imagenes, sonidos) que permiten a los sistemas digitales procesar, analizar y generar resultados.</p>
+                                <p><strong>Ejemplo:</strong> Las busquedas que realizas en Google.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-gear-fill text-secondary me-2"></i>Automatizacion</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Uso de tecnologia para realizar tareas automaticamente.</p>
+                                <p><strong>Definicion ampliada:</strong> La automatizacion consiste en delegar a sistemas tecnologicos la ejecucion de tareas repetitivas o complejas sin intervencion constante de una persona.</p>
+                                <p><strong>Ejemplo:</strong> Un semaforo inteligente o un chatbot de atencion al cliente.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-shield-check-fill text-success me-2"></i>Privacidad Digital</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Proteccion de la informacion personal en internet.</p>
+                                <p><strong>Definicion ampliada:</strong> La privacidad digital implica resguardar los datos personales y controlar que informacion compartimos en entornos digitales.</p>
+                                <p><strong>Ejemplo:</strong> Configurar quien puede ver tus publicaciones en redes sociales.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-shield-check-fill text-success me-2"></i>Etica Digital</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Normas y valores que orientan el uso responsable de la tecnologia.</p>
+                                <p><strong>Definicion ampliada:</strong> La etica digital se refiere a los principios que regulan el comportamiento en entornos tecnologicos, promoviendo respeto, responsabilidad y uso consciente.</p>
+                                <p><strong>Ejemplo:</strong> No usar IA para copiar tareas sin reflexion.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-person-fill text-info me-2"></i>Usuario</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Persona que utiliza una tecnologia o sistema digital.</p>
+                                <p><strong>Definicion ampliada:</strong> El usuario es quien interactua con dispositivos, aplicaciones o plataformas digitales.</p>
+                                <p><strong>Ejemplo:</strong> Un estudiante que utiliza una plataforma educativa.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-globe2 text-primary me-2"></i>Internet</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Red mundial que conecta dispositivos para compartir informacion.</p>
+                                <p><strong>Definicion ampliada:</strong> Internet es una red global de comunicacion que permite el intercambio de informacion entre dispositivos conectados.</p>
+                                <p><strong>Ejemplo:</strong> Buscar informacion en linea.</p>
+                            </details>
+                            <details class="theory-section">
+                                <summary><i class="bi bi-cpu-fill text-warning me-2"></i>Aprendizaje Automatico (Machine Learning)</summary>
+                                <p class="mt-2"><strong>Definicion corta:</strong> Sistema que mejora su funcionamiento a partir de datos.</p>
+                                <p><strong>Definicion ampliada:</strong> Es una tecnica dentro de la inteligencia artificial que permite a los sistemas aprender patrones a partir de grandes cantidades de datos sin ser programados paso a paso.</p>
+                                <p><strong>Ejemplo:</strong> El reconocimiento facial en el celular.</p>
+                            </details>
+                        </div>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <strong>Consejo de Atect Bot:</strong> Estos conceptos aparecen en el crucigrama. Leelos con atencion antes de empezar.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer theory-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-2"></i>Cerrar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btnGoToCrossword">
+                        <i class="bi bi-play-fill me-2"></i>Ir al crucigrama
+                    </button>
                 </div>
             </div>
         </div>
