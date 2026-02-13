@@ -408,6 +408,118 @@ body {
     border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
+/* Medallas de progreso */
+.medal-rack {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    background: rgba(10, 14, 39, 0.7);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    max-width: 42vw;
+    z-index: 90;
+}
+
+.medal-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    font-size: 0.75rem;
+    color: rgba(240, 244, 248, 0.9);
+}
+
+.medal-item .medal-icon {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.medal-item.earned {
+    background: rgba(255, 133, 0, 0.12);
+    border-color: rgba(255, 133, 0, 0.4);
+}
+
+.medal-item.earned .medal-icon {
+    color: var(--color-obligatoria);
+}
+
+.medal-item.locked {
+    opacity: 0.45;
+}
+
+@media (max-width: 768px) {
+    .medal-rack {
+        position: static;
+        margin: 0.5rem auto 0;
+        max-width: 90vw;
+        justify-content: center;
+    }
+}
+
+/* Medallero dentro del modal */
+.medal-rack-modal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: rgba(10, 14, 39, 0.3);
+    border: 2px solid rgba(0, 212, 255, 0.25);
+    border-radius: 16px;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.medal-rack-modal .medal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    font-size: 0.9rem;
+    color: rgba(240, 244, 248, 0.95);
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.medal-rack-modal .medal-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.medal-rack-modal .medal-item .medal-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+.medal-rack-modal .medal-item.earned {
+    background: rgba(255, 133, 0, 0.15);
+    border-color: rgba(255, 133, 0, 0.5);
+}
+
+.medal-rack-modal .medal-item.earned .medal-icon {
+    color: var(--color-obligatoria);
+}
+
+.medal-rack-modal .medal-item.locked {
+    opacity: 0.5;
+}
+
+.medal-rack-modal .medal-label {
+    font-weight: 600;
+    text-align: center;
+}
+
 .legend-badges .badge {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;

@@ -116,6 +116,11 @@
                             </button>
                         </li>
                         <li class="nav-item">
+                            <button id="btnMedallero" class="btn btn-sm btn-outline-light nav-btn" aria-label="Ver medallero" data-bs-toggle="modal" data-bs-target="#modalMedallero">
+                                <i class="bi bi-award-fill me-1"></i>Medallero
+                            </button>
+                        </li>
+                        <li class="nav-item">
                             <button id="btnMuteToggle" class="btn btn-sm btn-outline-light nav-btn" aria-label="Silenciar música" title="Silenciar música">
                                 <img src="assets/img/iconos/sound-on.png" alt="" class="icon-sound" id="iconSound">
                             </button>
@@ -160,7 +165,7 @@
             <div class="bot-panel-content">
                 <div id="botTabHistoria" class="bot-tab-content active">
                     <p class="bot-message">
-                        Has llegado al Centro de Mando de la Agencia TecnoFuturo. Aqui comienza tu entrenamiento como analista: seis misiones, un recorrido y un informe final.
+                        Has llegado al Centro de Mando de la Agencia TecnoFuturo. Esta ruta forma analistas capaces de usar la tecnologia con criterio, creatividad y responsabilidad.
                     </p>
                     <button id="btnOpenHistoriaFromBot" class="btn btn-sm btn-outline-primary w-100">
                         <i class="bi bi-book me-1"></i>Abrir historia completa
@@ -170,7 +175,7 @@
                     <div id="botHelpContent">
                         <p class="bot-message">
                             <i class="bi bi-info-circle me-2"></i>
-                            <strong>La ruta esta activa.</strong> Elige una herramienta del 1 al 6 y abre tu siguiente mision.
+                            <strong>La ruta esta activa.</strong> Elige una herramienta del 1 al 6, cumple la mision y gana tu medalla.
                         </p>
                         <div class="bot-tips">
                             <p><strong>Bitacora rapida:</strong></p>
@@ -178,6 +183,7 @@
                                 <li>Sigue el orden recomendado (1→2→3...)</li>
                                 <li>Lee el contexto narrativo antes de actuar</li>
                                 <li>Completa las misiones obligatorias (naranja)</li>
+                                <li>Marca la mision completada para obtener tu medalla</li>
                             </ul>
                         </div>
                     </div>
@@ -221,14 +227,29 @@
                 </div>
                 <div class="modal-body">
                     <div class="lore-content">
-                        <p class="lead mb-4">
-                            Bienvenido al <strong>Centro de Mando de la Agencia TecnoFuturo</strong>.
-                            En este mundo la tecnologia avanza sin pausa, y tu rol es claro: convertirte en analista,
-                            comprender lo digital y crear mensajes responsables que orienten a otros.
+                        <p class="lead mb-4"><strong>Nuestra Historia – Actividad</strong></p>
+                        <p>
+                            En un mundo donde la tecnologia avanza mas rapido que nuestra capacidad de comprenderla, surge una mision:
+                            formar ciudadanos criticos, creativos y capaces de utilizar la innovacion para el bien comun.
+                        </p>
+                        <p>
+                            La actividad se situa en un escenario donde los participantes forman parte de un equipo interdisciplinario
+                            encargado de resolver desafios reales mediante el uso estrategico de herramientas digitales. A traves de
+                            investigacion, colaboracion y toma de decisiones, deberan analizar informacion, disenar soluciones y evaluar
+                            su impacto.
+                        </p>
+                        <p>
+                            Durante el recorrido, integraran pensamiento critico, trabajo colaborativo y uso responsable de la tecnologia.
+                            Contaran con recursos digitales, apoyo de plataformas educativas y herramientas interactivas que simulan
+                            entornos reales de aplicacion profesional.
+                        </p>
+                        <p>
+                            El objetivo no es solo completar tareas, sino comprender como el conocimiento se transforma en accion, como
+                            la tecnologia se convierte en herramienta de aprendizaje y como cada decision influye en el resultado final.
                         </p>
                         <p class="mb-4">
-                            Cada herramienta del centro activa una mision. Avanza en orden y junta las piezas del
-                            informe final para demostrar que puedes navegar el futuro digital con criterio.
+                            Al finalizar, los participantes no solo habran resuelto el desafio, sino que habran fortalecido habilidades
+                            clave para desenvolverse en contextos academicos, laborales y sociales en constante cambio.
                         </p>
                         
                         <h4 class="mt-4 mb-3"><i class="bi bi-compass me-2"></i>Reglas del Itinerario</h4>
@@ -237,6 +258,7 @@
                             <li>Cada mision entrena una <strong>habilidad cognitiva</strong> (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear).</li>
                             <li>Lee el <strong>contexto narrativo</strong> para entender tu rol en la Agencia.</li>
                             <li>Completa las actividades siguiendo las <strong>instrucciones</strong> de cada herramienta.</li>
+                            <li>Al completar una mision, obtienes una <strong>medalla</strong> visible en el tablero.</li>
                             <li>La mision final (A6) es la <strong>entrega del informe</strong>: un mensaje digital responsable.</li>
                         </ul>
 
@@ -274,11 +296,12 @@
                     </p>
                     <p>
                         Cada herramienta del centro es una sala de entrenamiento. Si avanzas en orden, cada mision te entrega
-                        una pieza del rompecabezas hasta llegar al informe final.
+                        una pieza del rompecabezas y una medalla que evidencia tu progreso.
                     </p>
                     <ul class="instruction-list">
                         <li>Lee el contexto narrativo antes de activar cada sala.</li>
                         <li>Domina los conceptos clave para desbloquear el crucigrama.</li>
+                        <li>Marca la mision completada para obtener tu medalla.</li>
                         <li>Guarda evidencias: seran tu respaldo en la mision final.</li>
                     </ul>
                     <div class="alert alert-info">
@@ -369,6 +392,9 @@
                             historia, pasos guiados y checklist por mision.
                         </li>
                         <li>
+                            <strong>Gana medallas:</strong> Marca la mision como completada para recibir tu medalla en el tablero.
+                        </li>
+                        <li>
                             <strong>Regresa al inicio:</strong> Usa el boton "Inicio" para volver a la sala principal.
                         </li>
                     </ol>
@@ -379,6 +405,32 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE MEDALLERO -->
+    <div class="modal fade" id="modalMedallero" tabindex="-1" aria-labelledby="modalMedalleroLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalMedalleroLabel">
+                        <i class="bi bi-award-fill me-2"></i>Medallero de Progreso
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center mb-4">
+                        <i class="bi bi-trophy-fill text-warning me-2"></i>
+                        Aquí se muestran las medallas obtenidas por completar misiones
+                    </p>
+                    <div id="medalRack" class="medal-rack-modal" aria-label="Medallas de progreso">
+                        <!-- Se llenará dinámicamente con JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>

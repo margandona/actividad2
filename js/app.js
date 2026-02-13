@@ -19,7 +19,7 @@
             type: 'optativa',
             typeClass: 'bg-optativa',
             typeLabel: 'Optativa',
-            lore: 'Ingresas al Panel de Datos del Centro de Mando. Aqui se guardan los conceptos base de la tecnologia digital. Sin este vocabulario, las misiones quedan bloqueadas.',
+            lore: 'Ingresas al Panel de Datos del Centro de Mando. El equipo interdisciplinario necesita este vocabulario para analizar desafios reales y avanzar sin errores.',
             instructions: [
                 'Activa el crucigrama interactivo de Educaplay',
                 'Identifica al menos 10 conceptos clave sobre tecnologia, IA y uso responsable',
@@ -40,7 +40,7 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'El Monitor de Observacion se enciende. El informe audiovisual revela como opera la inteligencia artificial. Tu tarea es analizar y responder con claridad.',
+            lore: 'El Monitor de Observacion se enciende. El equipo revisa un informe audiovisual para comprender como opera la inteligencia artificial antes de decidir.',
             instructions: [
                 'Visualiza el video interactivo completo en Educaplay',
                 'Responde las preguntas de comprension incrustadas',
@@ -61,7 +61,7 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'La Consola de IA queda activa. Tienes acceso a ChatGPT para resolver un caso. La IA apoya, pero el juicio es tuyo. Documenta cada paso.',
+            lore: 'La Consola de IA queda activa. El equipo enfrenta un caso real y usa IA como apoyo. La decision final es humana y debe estar documentada.',
             instructions: [
                 'Haz clic en el boton para acceder a ChatGPT en nueva pestana',
                 'Recibe el caso de estudio de tu docente',
@@ -90,7 +90,7 @@
             type: 'refuerzo',
             typeClass: 'bg-refuerzo',
             typeLabel: 'Refuerzo',
-            lore: 'La Bitacora Personal se abre. Es momento de registrar evidencia: como usas la tecnologia, que patrones detectas y que debes mejorar. La honestidad es clave.',
+            lore: 'La Bitacora Personal se abre. Cada integrante registra evidencia de uso digital, identifica patrones y propone mejoras para el bien comun.',
             instructions: [
                 'Accede al Padlet de reflexion personal (embebido abajo)',
                 'Analiza tus habitos tecnologicos con honestidad',
@@ -112,7 +112,7 @@
             type: 'optativa',
             typeClass: 'bg-optativa',
             typeLabel: 'Optativa',
-            lore: 'La Mesa de Comunicaciones conecta al equipo. Los analistas debaten dilemas actuales. Tu mision es argumentar con evidencia, escuchar y coevaluar.',
+            lore: 'La Mesa de Comunicaciones conecta al equipo. Se debaten dilemas reales y se evalua el impacto de cada decision con evidencia.',
             instructions: [
                 'Lee el tema de debate planteado por tu docente',
                 'Investiga y fundamenta tu postura con evidencia',
@@ -145,7 +145,7 @@
             type: 'obligatoria',
             typeClass: 'bg-obligatoria',
             typeLabel: 'Obligatoria',
-            lore: 'La Sala de Difusion abre el canal final. Aqui entregas tu informe: un mensaje digital que promueva el uso responsable. Es el cierre del recorrido.',
+            lore: 'La Sala de Difusion abre el canal final. Aqui el equipo transforma conocimiento en accion y entrega un mensaje responsable a la comunidad.',
             instructions: [
                 'Crea un video original (60-90 segundos) sobre ciudadania digital responsable',
                 'Integra aprendizajes de todas las misiones anteriores',
@@ -191,6 +191,13 @@
     let audioOpen = null;
     let audioClose = null;
     let isMuted = false;
+    
+    // Control de throttle para sonidos
+    let lastHoverTime = 0;
+    let lastHoverElement = null;
+    let activeSounds = [];
+    const HOVER_THROTTLE_MS = 300; // Mínimo 300ms entre sonidos hover
+    const MAX_SIMULTANEOUS_SOUNDS = 3; // Máximo 3 sonidos simultáneos
 
     // =================================
     // MENSAJES DE AYUDA DEL BOT (COMPLETO)
@@ -271,7 +278,7 @@
                 'Resuelve el crucigrama sin adivinar; relee pistas si fallas.',
                 'Guarda 3 conceptos que sostendran las misiones siguientes.'
             ],
-            tip: 'Mision lograda si puedes explicar los conceptos con tus propias palabras.',
+            tip: 'Mision lograda si puedes explicar los conceptos con tus propias palabras. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Revisé el vocabulario con Atect Bot.',
                 'Resolvi el crucigrama sin adivinar.',
@@ -294,7 +301,7 @@
                 'Si fallas, vuelve al fragmento y observa de nuevo.',
                 'Anota una idea clave y un ejemplo real de IA en tu entorno.'
             ],
-            tip: 'Mision lograda si conectas el informe con ejemplos reales y justificas tus respuestas.',
+            tip: 'Mision lograda si conectas el informe con ejemplos reales y justificas tus respuestas. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Respondi todas las preguntas del video.',
                 'Anote 1 idea clave.',
@@ -315,7 +322,7 @@
                 'Extrae 2 beneficios, 2 riesgos y 1 criterio etico.',
                 'Redacta tu conclusion personal: que aceptas y que limitas.'
             ],
-            tip: 'Mision lograda si tu conclusion es tuya y esta basada en argumentos.',
+            tip: 'Mision lograda si tu conclusion es tuya y esta basada en argumentos. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Use ChatGPT con el prompt indicado.',
                 'Identifique beneficios, riesgos y criterios eticos.',
@@ -336,7 +343,7 @@
                 'Incluye un ejemplo real de tu experiencia digital.',
                 'Cierra con un cambio concreto para un uso mas responsable.'
             ],
-            tip: 'Mision lograda si tu reflexion es especifica, honesta y propone un cambio real.',
+            tip: 'Mision lograda si tu reflexion es especifica, honesta y propone un cambio real. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Respondi las 4 preguntas.',
                 'Inclui 1 ejemplo personal.',
@@ -357,7 +364,7 @@
                 'Responde a 2 companeros con argumentos y respeto.',
                 'Completa la coevaluacion con criterios claros.'
             ],
-            tip: 'Mision lograda si argumentas, consideras otras posturas y cuidas la convivencia digital.',
+            tip: 'Mision lograda si argumentas, consideras otras posturas y cuidas la convivencia digital. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Publique mi postura con argumentos.',
                 'Respondi a 2 companeros con respeto.',
@@ -379,7 +386,7 @@
                 'Subelo a YouTube como "No listado" o "Publico" y copia el enlace.',
                 'Entrega el enlace en el formulario oficial.'
             ],
-            tip: 'Mision lograda si tu mensaje es claro, respetuoso y basado en lo aprendido.',
+            tip: 'Mision lograda si tu mensaje es claro, respetuoso y basado en lo aprendido. Marca la mision completada para recibir tu medalla.',
             checklist: [
                 'Cree el video (60 a 90 s).',
                 'Lo subi a YouTube y copie el enlace.',
@@ -432,6 +439,7 @@
             
             // Renderizar utensilios en el layout correcto
             renderBoard();
+            renderMedalRack();
             
             // Resaltar la siguiente actividad recomendada
             setTimeout(() => {
@@ -780,6 +788,8 @@
             updateBotPanel(missionId);
             // Resaltar siguiente misión
             highlightNextMission();
+            // Actualizar medallas
+            renderMedalRack();
             // Opcional: agregar clase .is-complete al hotspot
             $(`.utensilio[data-mission-id="${missionId}"]`).addClass('is-complete');
         }
@@ -1047,6 +1057,33 @@
         }
     }
 
+    /**
+     * Renderiza el rack de medallas en el dashboard
+     */
+    function renderMedalRack() {
+        const $rack = $('#medalRack');
+        if (!$rack.length) return;
+
+        const completed = getCompletedMissions();
+        $rack.empty();
+
+        missions.forEach(mission => {
+            const earned = completed.includes(mission.id);
+            const $item = $('<div>', {
+                class: `medal-item ${earned ? 'earned' : 'locked'}`,
+                'data-mission-id': mission.id,
+                'aria-label': `Medalla Mision ${mission.number} ${earned ? 'obtenida' : 'bloqueada'}`
+            });
+            const $icon = $('<span>', { class: 'medal-icon' });
+            const $iconEl = $('<i>', { class: earned ? 'bi bi-award-fill' : 'bi bi-award' });
+            const $label = $('<span>', { class: 'medal-label', text: `Mision ${mission.number}` });
+
+            $icon.append($iconEl);
+            $item.append($icon, $label);
+            $rack.append($item);
+        });
+    }
+
     // =================================
     // SISTEMA DE AUDIO
     // =================================
@@ -1097,6 +1134,7 @@
     
     /**
      * Reproduce un sonido de manera segura (con fallback silencioso)
+     * Incluye límite de sonidos simultáneos y limpieza automática
      */
     function playSound(audioElement) {
         if (!audioElement) {
@@ -1105,7 +1143,21 @@
         }
         
         if (isMuted) {
-            console.log('🔇 playSound: Audio silenciado por usuario');
+            return;
+        }
+        
+        // Limpiar sonidos terminados
+        activeSounds = activeSounds.filter(sound => {
+            if (sound.ended || sound.paused) {
+                sound.remove();
+                return false;
+            }
+            return true;
+        });
+        
+        // Limitar sonidos simultáneos
+        if (activeSounds.length >= MAX_SIMULTANEOUS_SOUNDS) {
+            console.log('⚠️ Límite de sonidos simultáneos alcanzado');
             return;
         }
         
@@ -1115,24 +1167,32 @@
             if (!sound.src && audioElement.currentSrc) {
                 sound.src = audioElement.currentSrc;
             }
-            sound.load();
-            sound.volume = 0.7; // Volumen alto para efectos
+            sound.volume = 0.5; // Volumen moderado para efectos
+            
+            // Agregar al array de sonidos activos
+            activeSounds.push(sound);
+            
+            // Limpiar cuando termine
+            sound.addEventListener('ended', () => {
+                sound.remove();
+                activeSounds = activeSounds.filter(s => s !== sound);
+            });
             
             const playPromise = sound.play();
             
             if (playPromise !== undefined) {
                 playPromise
                     .then(() => {
-                        console.log('✅ Sonido reproducido correctamente:', audioElement.id);
+                        console.log('✅ Sonido reproducido:', audioElement.id);
                     })
                     .catch(err => {
-                        console.error('❌ Error reproduciendo sonido:', audioElement.id, err.message);
-                        // Intentar reproducir de nuevo después de interacción
-                        console.log('🔄 Intentando reproducir de nuevo...');
+                        console.warn('⚠️ Error reproduciendo sonido:', err.message);
+                        sound.remove();
+                        activeSounds = activeSounds.filter(s => s !== sound);
                     });
             }
         } catch (err) {
-            console.error('❌ Excepción en playSound:', err.message, err);
+            console.error('❌ Excepción en playSound:', err.message);
         }
     }
     
@@ -1223,25 +1283,49 @@
     
     /**
      * Agrega eventos de sonido a elementos interactivos
+     * Implementa throttle para evitar reproducción excesiva
      */
     function attachSoundEvents() {
         console.log('🎵 Configurando eventos de sonido...');
         
         // Verificar que los elementos de audio existan
-        console.log('AudioHover:', audioHover ? '✅' : '❌', audioHover?.src);
-        console.log('AudioClick:', audioClick ? '✅' : '❌', audioClick?.src);
-        console.log('AudioOpen:', audioOpen ? '✅' : '❌', audioOpen?.src);
-        console.log('AudioClose:', audioClose ? '✅' : '❌', audioClose?.src);
+        console.log('AudioHover:', audioHover ? '✅' : '❌');
+        console.log('AudioClick:', audioClick ? '✅' : '❌');
+        console.log('AudioOpen:', audioOpen ? '✅' : '❌');
+        console.log('AudioClose:', audioClose ? '✅' : '❌');
         
-        // Sonido hover en cualquier elemento interactivo
+        // Sonido hover en cualquier elemento interactivo con throttle
         $(document).on('mouseenter', 'button, .utensilio, a.btn, .nav-btn, .helper-bot, .checklist-navbar, input, select', function() {
-            console.log('👆 Hover detectado en:', this.id || this.className);
+            const now = Date.now();
+            const element = this;
+            
+            // Verificar si es el mismo elemento y no ha pasado suficiente tiempo
+            if (lastHoverElement === element && (now - lastHoverTime) < HOVER_THROTTLE_MS) {
+                return; // Ignorar hover repetido en el mismo elemento
+            }
+            
+            // Verificar throttle global
+            if ((now - lastHoverTime) < HOVER_THROTTLE_MS) {
+                return; // Muy pronto desde el último hover
+            }
+            
+            lastHoverTime = now;
+            lastHoverElement = element;
+            
+            console.log('👆 Hover en:', this.id || this.className);
             playSound(audioHover);
+        });
+        
+        // Resetear el elemento cuando el mouse sale
+        $(document).on('mouseleave', 'button, .utensilio, a.btn, .nav-btn, .helper-bot, .checklist-navbar, input, select', function() {
+            if (lastHoverElement === this) {
+                lastHoverElement = null;
+            }
         });
         
         // Sonido click/tap en cualquier elemento interactivo
         $(document).on('click', 'button, .utensilio, a.btn, .nav-btn, .helper-bot, .checklist-navbar, input[type="submit"], input[type="button"]', function() {
-            console.log('👆 Click detectado en:', this.id || this.className);
+            console.log('👆 Click en:', this.id || this.className);
             playSound(audioClick);
         });
         
@@ -1249,15 +1333,19 @@
         $(document).on('focus', 'button, .utensilio, a.btn, .nav-btn, .helper-bot, .checklist-navbar', function(e) {
             // Evitar sonido si viene del mouse (ya se disparó mouseenter)
             if (e.isTrusted && e.originalEvent && e.originalEvent.sourceCapabilities && e.originalEvent.sourceCapabilities.firesTouchEvents === false) {
-                // Es del mouse, ya sonó
-                return;
+                return; // Es del mouse, ya sonó
             }
             // Sonido para navegación por teclado
+            const now = Date.now();
+            if ((now - lastHoverTime) < HOVER_THROTTLE_MS) {
+                return; // Throttle también para teclado
+            }
+            lastHoverTime = now;
             console.log('⌨️ Focus por teclado en:', this.id || this.className);
             playSound(audioHover);
         });
         
-        console.log('✅ Eventos de sonido configurados');
+        console.log('✅ Eventos de sonido configurados con throttle de', HOVER_THROTTLE_MS, 'ms');
     }
 
     // =================================
@@ -1537,6 +1625,11 @@
                 focus: true
             });
         }
+        
+        // Renderizar medallas cuando se abre el modal de medallero
+        $('#modalMedallero').on('show.bs.modal', function() {
+            renderMedalRack();
+        });
         
         // Inicializar navbar collapse
         const navbarElement = document.getElementById('navbarMain');
