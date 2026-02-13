@@ -121,8 +121,13 @@
                             </button>
                         </li>
                         <li class="nav-item">
+                            <button id="btnPuzzle" class="btn btn-sm btn-outline-light nav-btn" aria-label="Ver puzzle" data-bs-toggle="modal" data-bs-target="#modalPuzzle">
+                                <img src="assets/img/puzle.png" alt="" class="icon-img-sm me-1">Puzzle
+                            </button>
+                        </li>
+                        <li class="nav-item">
                             <button id="btnMuteToggle" class="btn btn-sm btn-outline-light nav-btn" aria-label="Silenciar música" title="Silenciar música">
-                                <img src="assets/img/iconos/sound-on.png" alt="" class="icon-sound" id="iconSound">
+                                <img src="assets/img/iconos/sound-on.png" alt="" class="icon-sound me-1" id="iconSound"><span id="audioText">Audio</span>
                             </button>
                         </li>
                     </ul>
@@ -256,16 +261,22 @@
                         <ul class="instruction-list">
                             <li>Hay <strong>6 misiones</strong> del 1 al 6. Algunas son obligatorias, otras optativas o de refuerzo.</li>
                             <li>Cada mision entrena una <strong>habilidad cognitiva</strong> (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear).</li>
-                            <li>Lee el <strong>contexto narrativo</strong> para entender tu rol en la Agencia.</li>
-                            <li>Completa las actividades siguiendo las <strong>instrucciones</strong> de cada herramienta.</li>
-                            <li>Al completar una mision, obtienes una <strong>medalla</strong> visible en el tablero.</li>
+                            <li>Lee el <strong>contexto narrativo</strong> y completa el <strong>checklist del bot</strong> en cada mision.</li>
+                            <li>Solo puedes marcar una mision como completada cuando termines todo el checklist.</li>
+                            <li>Al completar una mision, ganas una <strong>medalla</strong> y revelas una pieza del <strong>puzzle</strong>.</li>
+                            <li>Al terminar las 6 misiones, habras rescatado a tu <strong>mascota guardiana</strong> del ciberespacio.</li>
                             <li>La mision final (A6) es la <strong>entrega del informe</strong>: un mensaje digital responsable.</li>
                         </ul>
 
-                        <div class="alert alert-info mt-4">
+                        <div class="alert alert-warning mt-4">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <strong>Urgente:</strong> Tu mascota guardiana esta perdida en el ciberespacio.
+                            Completa las 6 misiones y sus checklists para rescatarla pieza por pieza.
+                        </div>
+                        <div class="alert alert-info mt-3">
                             <i class="bi bi-lightbulb-fill me-2"></i>
                             <strong>Consejo del Director:</strong> No te apresures. Cada mision construye la siguiente.
-                            Observa, piensa y crea con proposito.
+                            Observa, piensa y crea con proposito. Tu mascota guardiana te espera al final del camino.
                         </div>
                     </div>
                 </div>
@@ -294,16 +305,26 @@
                         La Agencia TecnoFuturo abre sus puertas. Hoy entras como aspirante, y saldras como analista capaz
                         de entender la tecnologia, cuestionarla y crear mensajes responsables.
                     </p>
+                    <p class="text-warning fw-bold">
+                        ¡Tu mascota guardiana se ha perdido en el ciberespacio! Cada mision completada revela una pieza
+                        del puzzle para rescatarla.
+                    </p>
                     <p>
-                        Cada herramienta del centro es una sala de entrenamiento. Si avanzas en orden, cada mision te entrega
-                        una pieza del rompecabezas y una medalla que evidencia tu progreso.
+                        Cada herramienta del centro es una sala de entrenamiento. Si avanzas en orden y completas los checklists,
+                        cada mision te entrega una medalla y revela una pieza del puzzle vertical.
                     </p>
                     <ul class="instruction-list">
                         <li>Lee el contexto narrativo antes de activar cada sala.</li>
-                        <li>Domina los conceptos clave para desbloquear el crucigrama.</li>
-                        <li>Marca la mision completada para obtener tu medalla.</li>
+                        <li>Completa el checklist del bot en cada mision (todos los items).</li>
+                        <li>Marca la mision completada para obtener tu medalla y revelar una pieza del puzzle.</li>
                         <li>Guarda evidencias: seran tu respaldo en la mision final.</li>
+                        <li>Al terminar las 6 misiones, accede al puzzle para descubrir la identidad de tu mascota guardiana.</li>
                     </ul>
+                    <div class="alert alert-warning">
+                        <i class="bi bi-puzzle-fill me-2"></i>
+                        <strong>Mision de Rescate:</strong> Hay 5 mascotas guardianas posibles (AstroByte, Nexo, Lumina, Pixelon, Synthi).
+                        Cada estudiante rescata una diferente. ¿Cual sera la tuya?
+                    </div>
                     <div class="alert alert-info">
                         <i class="bi bi-lightbulb-fill me-2"></i>
                         Si quieres el relato completo, abre la historia antes de comenzar.
@@ -388,16 +409,50 @@
                             <strong>Accede al recurso:</strong> Usa el boton "Ir al recurso" para entrar a la plataforma de la mision.
                         </li>
                         <li>
-                            <strong>Usa el bot interactivo:</strong> Haz clic en el bot para abrir el panel de ayuda. Alli tienes
-                            historia, pasos guiados y checklist por mision.
+                            <strong>Usa el bot interactivo:</strong> Haz clic en el bot para abrir el panel de ayuda. Alli encontraras
+                            la historia, pasos guiados y el <strong>checklist de cada mision</strong>.
                         </li>
                         <li>
-                            <strong>Gana medallas:</strong> Marca la mision como completada para recibir tu medalla en el tablero.
+                            <strong>Completa el checklist:</strong> Marca cada paso del checklist en el bot a medida que avances.
+                            Solo cuando completes todos los items podras marcar la mision como completada.
+                        </li>
+                        <li>
+                            <strong>Gana medallas y rescata tu mascota:</strong> Al completar una mision, ganas una medalla y revelas
+                            una pieza del puzzle. Tu mascota guardiana esta perdida en el ciberespacio y solo tu puedes rescatarla.
+                        </li>
+                        <li>
+                            <strong>Arma el puzzle:</strong> Cada medalla obtenida revela una pieza. Completa las 6 misiones para
+                            rescatar completamente a tu mascota guardiana y descubrir su identidad y mensaje.
                         </li>
                         <li>
                             <strong>Regresa al inicio:</strong> Usa el boton "Inicio" para volver a la sala principal.
                         </li>
                     </ol>
+                    
+                    <h4 class="mt-4"><i class="bi bi-puzzle-fill me-2"></i>Rescata tu Mascota Guardiana</h4>
+                    <p class="text-warning fw-bold">
+                        ¡Tu mascota guardiana se ha perdido en el ciberespacio y solo tu puedes rescatarla!
+                    </p>
+                    <p>
+                        Para rescatarla debes completar las 6 misiones del Centro de Mando. Cada vez que completes una mision
+                        y su checklist, revelaras una pieza del puzzle. Las piezas aparecen plateadas hasta que las desbloqueas.
+                    </p>
+                    <p>
+                        Cuando completes todas las misiones, el puzzle revelara la identidad de tu <strong>mascota guardiana</strong>,
+                        una entidad digital que te protege en el mundo tecnologico. Hay 5 mascotas posibles:
+                    </p>
+                    <ul class="instruction-list">
+                        <li><strong>AstroByte</strong> - El Explorador de Datos (Te guia en la curiosidad estructurada)</li>
+                        <li><strong>Nexo</strong> - El Guardian del Nucleo Etico (Te protege con etica digital)</li>
+                        <li><strong>Lumina</strong> - La Energia de la Evolucion (Te impulsa con creatividad)</li>
+                        <li><strong>Pixelon</strong> - El Tejedor de Conexiones (Te conecta con pensamiento sistemico)</li>
+                        <li><strong>Synthi</strong> - La Inteligencia Evolutiva (Te acompaña en el uso critico de IA)</li>
+                    </ul>
+                    <p class="text-muted fst-italic">
+                        Cada estudiante rescata una mascota diferente de forma aleatoria. Tu mascota guardiana representa
+                        las habilidades que desarrollaste en tu recorrido y te protegera en el mundo digital.
+                    </p>
+                    
                     <div class="alert alert-info mt-3">
                         <i class="bi bi-lightbulb-fill me-2"></i>
                         <strong>Consejo:</strong> Puedes usar la tecla Tab para navegar entre las salas con el teclado.
@@ -423,10 +478,97 @@
                 <div class="modal-body">
                     <p class="text-center mb-4">
                         <i class="bi bi-trophy-fill text-warning me-2"></i>
-                        Aquí se muestran las medallas obtenidas por completar misiones
+                        Haz clic en las medallas para ver su historia
                     </p>
                     <div id="medalRack" class="medal-rack-modal" aria-label="Medallas de progreso">
                         <!-- Se llenará dinámicamente con JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE HISTORIA DE MEDALLA -->
+    <div class="modal fade" id="modalMedalStory" tabindex="-1" aria-labelledby="modalMedalStoryLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalMedalStoryLabel">
+                        <i class="bi bi-star-fill me-2 text-warning"></i><span id="medalStoryTitle"></span>
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img id="medalStoryImage" src="" alt="" class="medal-story-image">
+                    </div>
+                    <div id="medalStoryContent" class="medal-story-content">
+                        <!-- Se llenará dinámicamente con JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE PUZZLE -->
+    <div class="modal fade" id="modalPuzzle" tabindex="-1" aria-labelledby="modalPuzzleLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalPuzzleLabel">
+                        <img src="assets/img/puzle.png" alt="" class="icon-img-sm me-2">Entidad Digital
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="puzzle-intro mb-4" id="puzzleIntro">
+                        <p class="lead text-center">
+                            <i class="bi bi-puzzle-fill me-2"></i>
+                            ¡Tu mascota guardiana se ha perdido en el ciberespacio!
+                        </p>
+                        <p class="text-center text-muted">
+                            Completa las 6 misiones y sus checklists para rescatarla pieza por pieza.
+                            Cada medalla ganada revela una parte de tu compañero digital.
+                        </p>
+                    </div>
+                    
+                    <!-- Progreso del puzzle -->
+                    <div class="puzzle-progress mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">Progreso</span>
+                            <span id="puzzleProgressText" class="text-muted">0 / 6 piezas</span>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                            <div id="puzzleProgressBar" class="progress-bar bg-info" 
+                                 role="progressbar" style="width: 0%" 
+                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grid del puzzle -->
+                    <div id="puzzleGrid" class="puzzle-grid">
+                        <div class="puzzle-piece" data-piece="1"><span class="puzzle-number">1</span></div>
+                        <div class="puzzle-piece" data-piece="2"><span class="puzzle-number">2</span></div>
+                        <div class="puzzle-piece" data-piece="3"><span class="puzzle-number">3</span></div>
+                        <div class="puzzle-piece" data-piece="4"><span class="puzzle-number">4</span></div>
+                        <div class="puzzle-piece" data-piece="5"><span class="puzzle-number">5</span></div>
+                        <div class="puzzle-piece" data-piece="6"><span class="puzzle-number">6</span></div>
+                    </div>
+                    
+                    <!-- Mensaje final cuando se complete -->
+                    <div id="puzzleComplete" class="puzzle-complete" style="display: none;">
+                        <div class="alert alert-success mt-4">
+                            <h4 class="alert-heading" id="petName"></h4>
+                            <p id="petStory"></p>
+                            <hr>
+                            <p class="mb-0" id="petMessage"></p>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -449,6 +591,24 @@
                 Soy Atect Bot 🤖.<br>
                 Estoy aqui para abrir la ruta antes de cada mision y explicar los conceptos clave.<br>
                 Si tienes dudas, buscame y te guiare paso a paso.
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST DE FELICITACIÓN POR MEDALLA -->
+    <div class="toast-container position-fixed top-50 start-50 translate-middle" style="z-index: 11001;">
+        <div id="medalEarnedToast" class="toast medal-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="6000">
+            <div class="toast-header medal-toast-header">
+                <i class="bi bi-award-fill text-warning me-2" style="font-size: 1.5rem;"></i>
+                <strong class="me-auto">¡Felicitaciones!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body medal-toast-body text-center">
+                <h5 id="medalToastTitle" class="mb-3"></h5>
+                <p id="medalToastMessage" class="mb-3"></p>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalPuzzle" onclick="bootstrap.Toast.getInstance(document.getElementById('medalEarnedToast')).hide();">
+                    <img src="assets/img/puzle.png" alt="" class="icon-img-sm me-1">Ver Puzzle
+                </button>
             </div>
         </div>
     </div>

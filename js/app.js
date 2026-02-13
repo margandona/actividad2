@@ -784,6 +784,10 @@
         if (!completed.includes(missionId)) {
             completed.push(missionId);
             localStorage.setItem('completedMissions', JSON.stringify(completed));
+            
+            // Obtener información de la misión
+            const mission = missions.find(m => m.id === missionId);
+            
             // Actualizar panel del bot para mostrar badge "Completada"
             updateBotPanel(missionId);
             // Resaltar siguiente misión
@@ -792,7 +796,40 @@
             renderMedalRack();
             // Opcional: agregar clase .is-complete al hotspot
             $(`.utensilio[data-mission-id="${missionId}"]`).addClass('is-complete');
+            
+            // Mostrar toast de felicitación
+            showMedalEarnedToast(mission);
         }
+    }
+    
+    /**
+     * Muestra el toast de felicitación al ganar una medalla
+     */
+    function showMedalEarnedToast(mission) {
+        const completedCount = getCompletedMissions().length;
+        const totalMissions = missions.length;
+        
+        $('#medalToastTitle').html(`<i class="bi bi-award-fill text-warning"></i> ¡Medalla ${mission.number} Obtenida!`);
+        
+        if (completedCount === totalMissions) {
+            $('#medalToastMessage').html(`
+                <strong>¡Felicitaciones! Has completado todas las misiones.</strong><br>
+                Has rescatado completamente a tu mascota guardiana del ciberespacio.<br>
+                <span class="text-success fw-bold">¡Descubre su identidad en el puzzle!</span>
+            `);
+        } else {
+            $('#medalToastMessage').html(`
+                <strong>${mission.title}</strong><br>
+                Has revelado la pieza ${completedCount} de 6 del puzzle.<br>
+                <span class="text-info">¡Continúa rescatando a tu mascota guardiana!</span>
+            `);
+        }
+        
+        const toastElement = document.getElementById('medalEarnedToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+        
+        playSound(audioOpen);
     }
     
     /**
@@ -1080,8 +1117,299 @@
 
             $icon.append($iconEl);
             $item.append($icon, $label);
+            
+            // Agregar evento de clic solo si está earned
+            if (earned) {
+                $item.css('cursor', 'pointer');
+                $item.on('click', () => showMedalStory(mission.id));
+            }
+            
             $rack.append($item);
         });
+    }
+
+    // =================================
+    // SISTEMA DE MEDALLAS E HISTORIAS
+    // =================================
+    
+    /**
+     * Historias de las medallas según nivel de Bloom
+     */
+    const medalStories = {
+        a1: {
+            title: 'Arquitecto del Lenguaje Digital',
+            level: 'Recordar',
+            story: `
+                <h4><i class="bi bi-book-fill me-2"></i>Nivel Bloom: Recordar</h4>
+                <p class="lead">Has dominado el vocabulario fundamental de la tecnología digital.</p>
+                <p>
+                    Esta medalla representa tu capacidad de <strong>identificar y reconocer</strong> los conceptos 
+                    clave que estructuran el mundo digital. Sin este lenguaje, no hay comprensión posible.
+                </p>
+                <p>
+                    Como arquitecto del lenguaje, ahora puedes nombrar con precisión los elementos que forman 
+                    parte de la inteligencia artificial, los datos, los algoritmos y el uso responsable de la tecnología.
+                </p>
+                <div class="alert alert-info">
+                    <strong>Habilidad desbloqueada:</strong> Vocabulario técnico estructurado
+                </div>
+            `
+        },
+        a2: {
+            title: 'Observador de Sistemas',
+            level: 'Comprender',
+            story: `
+                <h4><i class="bi bi-eye-fill me-2"></i>Nivel Bloom: Comprender</h4>
+                <p class="lead">Has profundizado en el funcionamiento de la inteligencia artificial.</p>
+                <p>
+                    Esta medalla simboliza tu capacidad de <strong>explicar y describir</strong> cómo operan 
+                    los sistemas tecnológicos. No solo conoces las palabras, ahora comprendes los procesos.
+                </p>
+                <p>
+                    Como observador de sistemas, puedes identificar componentes, interpretar procesos y 
+                    relacionar la teoría con aplicaciones reales del mundo digital.
+                </p>
+                <div class="alert alert-info">
+                    <strong>Habilidad desbloqueada:</strong> Comprensión de procesos tecnológicos
+                </div>
+            `
+        },
+        a3: {
+            title: 'Ejecutor Estratégico',
+            level: 'Aplicar',
+            story: `
+                <h4><i class="bi bi-gear-fill me-2"></i>Nivel Bloom: Aplicar</h4>
+                <p class="lead">Has utilizado la IA para resolver un caso práctico con criterio.</p>
+                <p>
+                    Esta medalla reconoce tu capacidad de <strong>usar herramientas</strong> para solucionar 
+                    problemas reales. No te quedaste en la teoría: transformaste conocimiento en acción.
+                </p>
+                <p>
+                    Como ejecutor estratégico, entiendes que la IA es un apoyo, no un reemplazo. 
+                    La decisión final siempre fue tuya, crítica y fundamentada.
+                </p>
+                <div class="alert alert-info">
+                    <strong>Habilidad desbloqueada:</strong> Aplicación práctica con criterio
+                </div>
+            `
+        },
+        a4: {
+            title: 'Analista Reflexivo',
+            level: 'Analizar',
+            story: `
+                <h4><i class="bi bi-search me-2"></i>Nivel Bloom: Analizar</h4>
+                <p class="lead">Has examinado tus propios hábitos digitales con honestidad.</p>
+                <p>
+                    Esta medalla representa tu capacidad de <strong>descomponer y examinar</strong> tu relación 
+                    con la tecnología. Identificaste patrones, fortalezas y áreas de mejora.
+                </p>
+                <p>
+                    Como analista reflexivo, no temes mirarte críticamente. Sabes que el uso responsable 
+                    comienza con el autoconocimiento y la disposición de cambiar.
+                </p>
+                <div class="alert alert-info">
+                    <strong>Habilidad desbloqueada:</strong> Pensamiento crítico autorreflexivo
+                </div>
+            `
+        },
+        a5: {
+            title: 'Evaluador Ético',
+            level: 'Evaluar',
+            story: `
+                <h4><i class="bi bi-balance-scale me-2"></i>Nivel Bloom: Evaluar</h4>
+                <p class="lead">Has debatido dilemas tecnológicos con argumentos fundamentados.</p>
+                <p>
+                    Esta medalla certifica tu capacidad de <strong>juzgar y valorar</strong> el impacto 
+                    de la tecnología considerando múltiples perspectivas y evidencia.
+                </p>
+                <p>
+                    Como evaluador ético, defiendes posturas con respeto, escuchas contraargumentos 
+                    y comprendes que las decisiones tecnológicas tienen consecuencias humanas.
+                </p>
+                <div class="alert alert-info">
+                    <strong>Habilidad desbloqueada:</strong> Juicio ético fundamentado
+                </div>
+            `
+        },
+        a6: {
+            title: 'Creador Responsable',
+            level: 'Crear',
+            story: `
+                <h4><i class="bi bi-star-fill me-2"></i>Nivel Bloom: Crear</h4>
+                <p class="lead">Has producido un mensaje digital original y responsable.</p>
+                <p>
+                    Esta medalla corona tu recorrido: demostró tu capacidad de <strong>diseñar y producir</strong> 
+                    contenido que integra todo lo aprendido en las misiones anteriores.
+                </p>
+                <p>
+                    Como creador responsable, no solo consumes tecnología: la produces con propósito, 
+                    ética y consciencia del impacto que genera en tu comunidad.
+                </p>
+                <div class="alert alert-success">
+                    <strong>Logro máximo desbloqueado:</strong> Ciudadanía digital activa y responsable.
+                    <br>Has completado el recorrido de La Agencia TecnoFuturo.
+                </div>
+            `
+        }
+    };
+    
+    /**
+     * Muestra la historia de una medalla en el modal
+     */
+    function showMedalStory(missionId) {
+        const story = medalStories[missionId];
+        if (!story) return;
+        
+        const mission = missions.find(m => m.id === missionId);
+        if (!mission) return;
+        
+        $('#medalStoryTitle').text(story.title);
+        $('#medalStoryImage').attr('src', `assets/img/medallas/m${mission.number}.png`);
+        $('#modalMedalStoryLabel').html(`<i class="bi bi-star-fill me-2 text-warning"></i>${story.title}`);
+        $('#medalStoryContent').html(story.story);
+        
+        const modalMedalStory = new bootstrap.Modal('#modalMedalStory');
+        modalMedalStory.show();
+        
+        playSound(audioOpen);
+    }
+
+    // =================================
+    // SISTEMA DE PUZZLE Y MASCOTAS
+    // =================================
+    
+    /**
+     * Información de las mascotas digitales
+     */
+    const digitalPets = {
+        m1: {
+            name: 'AstroByte',
+            subtitle: 'El Explorador de Datos - Tu Guardián Rescatado',
+            story: `AstroByte se perdió en el ciberespacio mientras navegaba por océanos infinitos de información. 
+                    Estaba atrapado entre algoritmos fragmentados, esperando que alguien con curiosidad estructurada 
+                    pudiera reconstruirlo pieza por pieza.`,
+            story2: `Al completar las 6 misiones, demostraste que dominas el lenguaje de los sistemas. 
+                     AstroByte ahora te acompaña como tu guardián digital, protegiéndote mientras exploras 
+                     el mundo tecnológico sin perderte.`,
+            message: '"Has aprendido el lenguaje de los sistemas. Gracias por rescatarme. Ahora navegaremos juntos."',
+            represents: 'Te protege con curiosidad estructurada, conocimiento base y comprensión de datos.'
+        },
+        m2: {
+            name: 'Nexo',
+            subtitle: 'El Guardián del Núcleo Ético - Tu Protector Rescatado',
+            story: `Nexo quedó atrapado en el ciberespacio cuando un desequilibrio entre tecnología y humanidad 
+                    fragmentó su núcleo. Sus piezas esperaban a alguien capaz de tomar decisiones éticas y responsables.`,
+            story2: `Al rescatarlo, demostraste que comprendes el impacto de la tecnología en la sociedad. 
+                     Nexo ahora es tu guardián, vigilando que mantengas el equilibrio ético en cada decisión digital.`,
+            message: '"El conocimiento sin ética es inestable. Gracias por rescatarme. Seré tu brújula moral digital."',
+            represents: 'Te protege con ética digital, responsabilidad y seguridad tecnológica.'
+        },
+        m3: {
+            name: 'Lumina',
+            subtitle: 'La Energía de la Evolución - Tu Guardián Rescatado',
+            story: `Lumina se dispersó en el ciberespacio cuando dejaron de crearla con ideas nuevas. 
+                    Su energía de transformación esperaba a alguien capaz de crear contenido original y con propósito.`,
+            story2: `Al completar tu recorrido creativo, reconstruiste a Lumina pieza por pieza. 
+                     Ahora te acompaña como guardián, impulsándote a seguir creando y transformando conocimiento en acción.`,
+            message: '"Has dejado de repetir. Ahora creas. Gracias por rescatarme. Evolucionaremos juntos."',
+            represents: 'Te protege con creatividad, evolución constante y poder de creación.'
+        },
+        m4: {
+            name: 'Pixelon',
+            subtitle: 'El Tejedor de Conexiones - Tu Guardián Rescatado',
+            story: `Pixelon quedó fragmentado en el ciberespacio cuando sus nodos de conexión se desvincularon. 
+                    Cada pieza esperaba a alguien capaz de ver patrones y relacionar conceptos entre sí.`,
+            story2: `Al rescatarlo, demostraste que comprendes los sistemas como redes interconectadas. 
+                     Pixelon ahora es tu guardián, ayudándote a ver el mapa completo del conocimiento tecnológico.`,
+            message: '"Todo conocimiento está conectado. Gracias por reconstruirme. Ahora tejeremos redes juntos."',
+            represents: 'Te protege con pensamiento sistémico, redes digitales y comprensión profunda.'
+        },
+        m5: {
+            name: 'Synthi',
+            subtitle: 'La Inteligencia Evolutiva - Tu Guardián Rescatado',
+            story: `Synthi se perdió en el ciberespacio cuando agentes irresponsables abusaron de la inteligencia artificial. 
+                    Sus fragmentos esperaban a alguien que comprendiera el uso crítico y consciente de la IA.`,
+            story2: `Al rescatarla, demostraste que la IA es una herramienta de apoyo, no un reemplazo del pensamiento humano. 
+                     Synthi ahora te acompaña como guardián, recordándote siempre decidir con autonomía intelectual.`,
+            message: '"La inteligencia no es copiar. Es comprender y decidir. Gracias por rescatarme. Seré tu aliada crítica."',
+            represents: 'Te protege con uso crítico de IA, aplicación responsable y autonomía intelectual.'
+        }
+    };
+    
+    /**
+     * Asigna una mascota aleatoria al usuario si no tiene una
+     */
+    function assignPet() {
+        let pet = localStorage.getItem('assignedPet');
+        if (!pet) {
+            const petKeys = Object.keys(digitalPets);
+            const randomIndex = Math.floor(Math.random() * petKeys.length);
+            pet = petKeys[randomIndex];
+            localStorage.setItem('assignedPet', pet);
+            console.log('🐾 Mascota asignada:', pet);
+        }
+        return pet;
+    }
+    
+    /**
+     * Renderiza el puzzle con las piezas reveladas según progreso
+     */
+    function renderPuzzle() {
+        const completed = getCompletedMissions();
+        const petKey = assignPet();
+        const pet = digitalPets[petKey];
+        
+        // Actualizar progreso
+        const progressPercent = Math.round((completed.length / missions.length) * 100);
+        $('#puzzleProgressBar').css('width', progressPercent + '%')
+                               .attr('aria-valuenow', progressPercent)
+                               .text(progressPercent + '%');
+        $('#puzzleProgressText').text(`${completed.length} / ${missions.length} piezas`);
+        
+        // URL de la imagen de la mascota
+        const petImage = `assets/img/mascotas/${petKey}.png`;
+        
+        // Revelar piezas según misiones completadas
+        $('.puzzle-piece').each(function() {
+            const pieceNum = $(this).data('piece');
+            if (completed.length >= pieceNum) {
+                // Pieza revelada: mostrar la imagen
+                $(this).addClass('revealed');
+                $(this).css({
+                    '--pet-image': `url(${petImage})`,
+                    'background-image': `url(${petImage})`
+                });
+            } else {
+                // Pieza no revelada: mantener efecto plateado
+                $(this).removeClass('revealed');
+                $(this).css({
+                    '--pet-image': 'none',
+                    'background-image': ''
+                });
+            }
+        });
+        
+        // Si completó todas, mostrar mensaje final
+        if (completed.length === missions.length) {
+            $('#puzzleIntro').hide();
+            $('#puzzleComplete').show();
+            $('#petName').html(`<i class="bi bi-star-fill me-2"></i>${pet.name} - ${pet.subtitle}`);
+            $('#petStory').html(`
+                <p>${pet.story}</p>
+                <p>${pet.story2}</p>
+                <p class="mt-3"><strong>Mensaje de ${pet.name}:</strong></p>
+                <p class="fst-italic">${pet.message}</p>
+            `);
+            $('#petMessage').html(`
+                <strong>Representa:</strong> ${pet.represents}
+                <br><br>
+                <em>"Las entidades digitales no existen sin los agentes humanos. 
+                La tecnología evoluciona, pero la responsabilidad siempre es tuya."</em>
+            `);
+        } else {
+            $('#puzzleIntro').show();
+            $('#puzzleComplete').hide();
+        }
     }
 
     // =================================
@@ -1263,6 +1591,7 @@
     function updateMuteButton() {
         const $iconSound = $('#iconSound');
         const $btn = $('#btnMuteToggle');
+        const $audioText = $('#audioText');
         
         if (isMuted) {
             $iconSound.attr('src', 'assets/img/iconos/sound-off.png');
@@ -1270,12 +1599,14 @@
             $btn.addClass('muted');
             $btn.attr('aria-label', 'Activar música y efectos');
             $btn.attr('title', 'Activar música y efectos');
+            if ($audioText.length) $audioText.text('Audio Off');
         } else {
             $iconSound.attr('src', 'assets/img/iconos/sound-on.png');
             $iconSound.attr('alt', 'Sonido activado');
             $btn.removeClass('muted');
             $btn.attr('aria-label', 'Silenciar música y efectos');
             $btn.attr('title', 'Silenciar música y efectos');
+            if ($audioText.length) $audioText.text('Audio');
         }
         
         console.log(`🔊 Estado de audio: ${isMuted ? 'MUTED' : 'UNMUTED'}`);
@@ -1629,6 +1960,11 @@
         // Renderizar medallas cuando se abre el modal de medallero
         $('#modalMedallero').on('show.bs.modal', function() {
             renderMedalRack();
+        });
+        
+        // Renderizar puzzle cuando se abre el modal de puzzle
+        $('#modalPuzzle').on('show.bs.modal', function() {
+            renderPuzzle();
         });
         
         // Inicializar navbar collapse

@@ -490,11 +490,17 @@ body {
     color: rgba(240, 244, 248, 0.95);
     min-width: 120px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .medal-rack-modal .medal-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.medal-rack-modal .medal-item.earned:hover {
+    box-shadow: 0 4px 12px rgba(255, 133, 0, 0.5);
+    border-color: rgba(255, 133, 0, 0.8);
 }
 
 .medal-rack-modal .medal-item .medal-icon {
@@ -518,6 +524,194 @@ body {
 .medal-rack-modal .medal-label {
     font-weight: 600;
     text-align: center;
+}
+
+/* Estilos para el modal de historia de medalla */
+.medal-story-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(255, 133, 0, 0.4);
+    animation: medalGlow 2s ease-in-out infinite;
+}
+
+@keyframes medalGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 133, 0, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 133, 0, 0.8));
+    }
+}
+
+.medal-story-content {
+    padding: 1.5rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.medal-story-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.medal-story-content p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.medal-story-content .alert {
+    margin-top: 1.5rem;
+}
+
+/* Estilos del Puzzle */
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 2 / 3;
+    background: rgba(10, 14, 39, 0.5);
+    padding: 1rem;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.puzzle-piece {
+    position: relative;
+    border: 2px solid rgba(192, 192, 192, 0.5);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    
+    /* Efecto plateado brillante para piezas no reveladas */
+    background: linear-gradient(
+        135deg,
+        rgba(169, 169, 169, 0.4) 0%,
+        rgba(220, 220, 220, 0.6) 25%,
+        rgba(240, 240, 240, 0.7) 50%,
+        rgba(220, 220, 220, 0.6) 75%,
+        rgba(169, 169, 169, 0.4) 100%
+    );
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(192, 192, 192, 0.4);
+    animation: silverShimmer 3s ease-in-out infinite;
+}
+
+/* Animación de brillo plateado */
+@keyframes silverShimmer {
+    0%, 100% {
+        box-shadow: 
+            inset 0 2px 6px rgba(255, 255, 255, 0.5),
+            inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+            0 0 15px rgba(192, 192, 192, 0.4);
+        border-color: rgba(192, 192, 192, 0.5);
+    }
+    50% {
+        box-shadow: 
+            inset 0 2px 8px rgba(255, 255, 255, 0.7),
+            inset 0 -2px 8px rgba(0, 0, 0, 0.2),
+            0 0 25px rgba(220, 220, 220, 0.7);
+        border-color: rgba(220, 220, 220, 0.7);
+    }
+}
+
+.puzzle-piece.revealed {
+    border-color: rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    animation: pieceReveal 0.8s ease-out;
+    /* Mostrar la imagen, remover el fondo plateado */
+    background-size: 200% 300%;
+    background-repeat: no-repeat;
+}
+
+@keyframes pieceReveal {
+    0% {
+        transform: scale(0.8) rotateY(180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+/* Layout vertical 2x3:
+   [1] [2]
+   [3] [4]
+   [5] [6]
+*/
+.puzzle-piece[data-piece="1"].revealed {
+    background-position: 0% 0%;
+}
+
+.puzzle-piece[data-piece="2"].revealed {
+    background-position: 100% 0%;
+}
+
+.puzzle-piece[data-piece="3"].revealed {
+    background-position: 0% 50%;
+}
+
+.puzzle-piece[data-piece="4"].revealed {
+    background-position: 100% 50%;
+}
+
+.puzzle-piece[data-piece="5"].revealed {
+    background-position: 0% 100%;
+}
+
+.puzzle-piece[data-piece="6"].revealed {
+    background-position: 100% 100%;
+}
+
+.puzzle-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(80, 80, 80, 0.5);
+    text-shadow: 
+        0 1px 2px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(192, 192, 192, 0.6);
+    transition: opacity 0.5s;
+    position: relative;
+    z-index: 2;
+}
+
+.puzzle-piece.revealed .puzzle-number {
+    opacity: 0;
+}
+
+.puzzle-complete {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.puzzle-progress {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .puzzle-grid {
+        max-width: 90%;
+        gap: 6px;
+        padding: 0.75rem;
+    }
+    
+    .puzzle-number {
+        font-size: 2rem;
+    }
+    
+    .puzzle-progress {
+        max-width: 90%;
+    }
 }
 
 .legend-badges .badge {
@@ -1518,6 +1712,83 @@ body {
     padding: 1rem;
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* =================================
+   TOAST DE MEDALLA GANADA
+   ================================= */
+.medal-toast {
+    min-width: 350px;
+    max-width: 450px;
+    background: linear-gradient(135deg, rgba(255, 133, 0, 0.95), rgba(255, 215, 0, 0.95));
+    border: 3px solid rgba(255, 215, 0, 0.8);
+    box-shadow: 0 10px 40px rgba(255, 133, 0, 0.5),
+                0 0 30px rgba(255, 215, 0, 0.4);
+    border-radius: 16px;
+    animation: medallionAppear 0.6s ease-out;
+}
+
+@keyframes medallionAppear {
+    0% {
+        transform: scale(0.5) rotate(-180deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1) rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.medal-toast-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 133, 0, 0.3));
+    border-bottom: 2px solid rgba(255, 215, 0, 0.5);
+    color: #0a0e27;
+    padding: 1rem 1.25rem;
+    font-weight: bold;
+}
+
+.medal-toast-header strong {
+    font-size: 1.2rem;
+}
+
+.medal-toast-header .btn-close {
+    opacity: 0.8;
+}
+
+.medal-toast-header .btn-close:hover {
+    opacity: 1;
+}
+
+.medal-toast-body {
+    color: #0a0e27;
+    padding: 1.25rem;
+    line-height: 1.8;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.medal-toast-body h5 {
+    color: #0a0e27;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.medal-toast-body .btn {
+    animation: pulseButton 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseButton {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 5px rgba(0, 212, 255, 0.3);
+    }
 }
 
 /* =================================
